@@ -1,51 +1,360 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 
+:root {
+  /***********************************************************
+   *                       Doom One Colors
+   * red        "#ff6c6b"
+   * orange     "#da8548"
+   * green      "#98be65"
+   * teal       "#4db5bd"
+   * yellow     "#ECBE7B"
+   * blue       "#51afef"
+   * blue       "#2257A0"
+   * magenta    "#c678dd"
+   * violet     "#a9a1e1"
+   * cyan       "#46D9FF"
+   * cyan       "#5699AF"
+   ************************************************************/
 
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --background-color: #282c34;
+  --foreground-color: #bbc2cf;
+  --navbar-color: #2f333c;
+  --navbar-link-color: #51afef;
+
+  --red: #ff6c6b;
+  --orange: #da8548;
+  --green: #98be65;
+  --teal: #4db5bd;
+  --yellow: #ecbe7b;
+  --blue: #51afef;
+  --magenta: #c678dd;
+  --violet: #a9a1e1;
+  --cyan: #46d9ff;
+  --dark-cyan: #5699af;
+  --black: #1b2229;
+  --gray: #5b6268;
+  --carnation: #ff525d;
+
+  --portfolio: #98be65;
+  --blog: #ecbe7b;
+  --contact: #c678dd;
+  --demo: #4db5bd;
+  --about: #a9a1e1;
+  --toolbox: #ff6c6b;
+
+  --transition-speed: 500ms;
 }
 
-a, .btn-link {
-    color: #0366d6;
+/*************************************************
+ * Color Classes
+ *************************************************/
+.cyan {
+  color: var(--cyan);
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+.teal {
+  color: var(--teal);
 }
 
-.content {
-    padding-top: 1.1rem;
+.violet {
+  color: var(--violet);
 }
 
-.valid.modified:not([type=checkbox]) {
-    outline: 1px solid #26b050;
+/*************************************************
+ * Scrollbar Customization
+ *************************************************/
+body::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-.invalid {
-    outline: 1px solid red;
+body::-webkit-scrollbar-track {
+  background: var(--background-color);
 }
 
-.validation-message {
-    color: red;
+body::-webkit-scrollbar-thumb {
+  background: var(--navbar-link-color);
 }
 
-#blazor-error-ui {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+/*************************************************
+ * Scrollbar Customization
+ *************************************************/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+html,
+body {
+  background-color: var(--background-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23539fd7' stroke-width='30' stroke-linecap='round' %3E%3Cline stroke='%23c98bd5' x1='639' y1='727' x2='590' y2='776'/%3E%3Cpolyline stroke='%235a9ed9' points='586 717 888 415 981 512 279 1215 120 1056 607 569'/%3E%3Cline stroke='%23619edc' x1='935' y1='494' x2='776' y2='653'/%3E%3Cline stroke='%23689ddd' x1='425' y1='624' x2='488' y2='560'/%3E%3Cpolyline stroke='%236f9cdf' points='745 685 198 1232 -24 1010 226 759'/%3E%3Cline stroke='%23779be0' x1='383' y1='666' x2='393' y2='655'/%3E%3Cline stroke='%237f9ae1' x1='416' y1='569' x2='438' y2='547'/%3E%3Cline stroke='%238699e1' x1='194' y1='664' x2='237' y2='622'/%3E%3Cpolyline stroke='%238e98e1' points='374 547 35 886 194 1045 618 622'/%3E%3Cline stroke='%239696e1' x1='681' y1='685' x2='671' y2='696'/%3E%3Cline stroke='%239e95e1' x1='724' y1='516' x2='649' y2='590'/%3E%3Cline stroke='%23a593e0' x1='334' y1='776' x2='501' y2='611'/%3E%3Cpolyline stroke='%23ad92de' points='556 746 226 1077 353 1204 1052 505 956 410 713 653'/%3E%3Cline stroke='%23b490dc' x1='258' y1='727' x2='385' y2='600'/%3E%3Cline stroke='%23bb8eda' x1='671' y1='505' x2='639' y2='537'/%3E%3Cpolyline stroke='%23c28dd8' points='162 696-24 883 71 978 353 696'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  color: var(--foreground-color);
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+h5 {
+  color: var(--violet);
+}
+
+main {
+  margin-left: 4rem;
+}
+
+.punchy-violet-border-bg {
+  background-color: rgba(40, 44, 52, 0.85);
+  border: 1px solid rgba(169, 161, 225, 0.25);
+  border-radius: 7px;
+}
+
+/*************************************************
+ * Navbar Styles
+ *************************************************/
+.navbar {
+  position: fixed;
+  background-color: var(--navbar-color);
+  width: 5rem;
+  height: 100vh;
+  transition: width var(--transition-speed) ease-in-out;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  /*margin: 0;*/
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  transition: var(--transition-speed);
+}
+
+.nav-link svg {
+  color: var(--foreground-color);
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+}
+
+.nav-link:hover svg {
+  color: var(--blue);
+}
+
+.logo {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  /* transform: rotate(-180deg); */
+  transform: rotate(90deg);
+  color: var(--blue);
+}
+
+/*************************************************
+ * Landing Page Specific
+ *************************************************/
+.landing-card {
+  width: 50vw;
+  height: 30vh;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-card h1 {
+  color: var(--blue);
+}
+
+.landing-card h2 {
+  font-size: 18px;
+}
+
+.landing-button {
+  width: 10rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 16px;
+  text-transform: lowercase;
+  border: none;
+  border-radius: 3px;
+  color: var(--background-color);
+  transition: var(--transition-speed) ease-in-out;
+}
+
+.button-portfolio {
+  background-color: var(--portfolio);
+  border: 1px solid var(--portfolio);
+}
+
+.button-portfolio:hover {
+  background-color: var(--background-color);
+  border: 1px solid var(--portfolio);
+  color: var(--portfolio);
+}
+
+.button-blog {
+  background-color: var(--blog);
+  border: 1px solid var(--blog);
+}
+
+.button-blog:hover {
+  background-color: var(--background-color);
+  border: 1px solid var(--blog);
+  color: var(--blog);
+}
+
+.button-contact {
+  background-color: var(--contact);
+  border: 1px solid var(--contact);
+}
+
+.button-contact:hover {
+  background-color: var(--background-color);
+  border: 1px solid var(--contact);
+  color: var(--contact);
+}
+
+.social-button {
+  /* min-width: 2rem; */
+  /* max-width: 2rem; */
+  min-width: 50px;
+  max-width: 50px;
+  margin: 1rem;
+  color: var(--foreground-color);
+}
+
+.social-button:hover {
+  /* color: var(--navbar-link-color); */
+  color: var(--cyan);
+}
+
+/*************************************************
+ * Cards
+ *************************************************/
+.card-toolbox {
+  background-color: var(--background-color);
+  border-radius-top: 20px;
+}
+
+.card-top {
+  border-bottom: 1px solid var(--violet);
+}
+
+/* Override bootstrap card-img-top */
+.card-img-top {
+  background-color: var(--black);
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.svg-icon {
+  height: 168px;
+  padding: 0.5rem;
+}
+
+.svg-icon-lang img {
+  height: 60px;
+  width: 60px;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border-radius: 7px;
+  background-color: var(--navbar-color);
+  border: 1px solid var(--black);
+}
+
+.svg-icon-light svg {
+  height: 60px;
+  width: 60px;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border-radius: 7px;
+  background-color: var(--foreground-color);
+  border: 1px solid var(--black);
+}
+
+.card-toolbox h5 {
+  padding: 0.5rem 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card-body {
+  background-color: var(--navbar-color);
+  justify-content: center;
+  align-items: center;
+  height: 32vh;
+}
+
+.card-body p {
+  font-size: 14px;
+}
+
+.btn-doom {
+  padding: 0.25rem;
+  margin: 0.5rem;
+  text-transform: uppercase;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+}
+
+.btn-doom:hover {
+  background-color: var(--cyan);
+  color: var(--background-color);
+}
+
+/*************************************************
+ * CSS Tooltips
+ *************************************************/
+/* .tooltip { */
+/*   position: relative; */
+/*   display: inline-block; */
+/*   border: 1px solid black; */
+/* } */
+
+/* .tooltip .tooltiptext { */
+/*   /\* visibility: hidden; *\/ */
+/*   width: 120px; */
+/*   background-color: black; */
+/*   color: white; */
+/*   border-radius: 5px; */
+/*   padding: 5px 0; */
+/*   position: absolute; */
+/*   z-index: 100; */
+/* } */
+
+/* .tooltip:hover .tooltiptext { */
+/*   visibility: visible; */
+/* } */

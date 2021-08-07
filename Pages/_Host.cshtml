@@ -16,31 +16,14 @@
     <title>olepunchy.io | Full Stack Engineering</title>
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <link href="css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="olepunchy.styles.css">
     
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />
 
-    <div id="blazor-error-ui">
-        <environment include="Staging,Production">
-            An error has occurred. This application may no longer respond until reloaded.
-        </environment>
-        <environment include="Development">
-            An unhandled exception has occurred. See browser dev tools for details.
-        </environment>
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-
     <script src="_framework/blazor.server.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
-    <script>
-     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-         return new bootstrap.Tooltip(tooltipTriggerEl)
-     })
-    </script>
 </body>
 </html>
