@@ -5,42 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Pages/About.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/Contact.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/LeftTooltip.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/LeftTooltip.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/RightTooltip.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/RightTooltip.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/Tooltip.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/Tooltip.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/aix.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/apache.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/docker.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/github-alt-brands.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/go.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/ibm.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/openvms.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/perl.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/powershell.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/python.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/sccm.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/splunk.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/vim.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/vmware.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/zenoss.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/About.razor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/img/doom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/img/freebsd.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/img/mysql.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/img/php.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/_Host.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/MainLayout.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/MainLayout.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/MainLayout.razor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/About.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/About.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/NavMenu.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/NavMenu.razor.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/img/linux.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/img/linux.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/img/punchy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/img/punchy.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/img/solaris.svg" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/img/solaris.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,14 +36,15 @@
       <option value="$PROJECT_DIR$/Shared/MainLayout.razor.css" />
       <option value="$PROJECT_DIR$/Pages/Contact.razor" />
       <option value="$PROJECT_DIR$/Shared/MainLayout.razor" />
-      <option value="$PROJECT_DIR$/Shared/NavMenu.razor" />
       <option value="$PROJECT_DIR$/Shared/TopTooltip.razor" />
       <option value="$PROJECT_DIR$/Shared/Tooltip.razor.css" />
       <option value="$PROJECT_DIR$/Shared/RightTooltip.razor.css" />
       <option value="$PROJECT_DIR$/Pages/Index.razor" />
       <option value="$PROJECT_DIR$/Shared/Tooltip.razor" />
       <option value="$PROJECT_DIR$/Shared/RightTooltip.razor" />
+      <option value="$PROJECT_DIR$/Pages/About.razor.css" />
       <option value="$PROJECT_DIR$/wwwroot/css/site.css" />
+      <option value="$PROJECT_DIR$/Shared/NavMenu.razor" />
       <option value="$PROJECT_DIR$/Pages/About.razor" />
     </changedPaths>
   </component>
@@ -139,7 +113,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628346664714</updated>
-      <workItem from="1628346681990" duration="11896000" />
+      <workItem from="1628346681990" duration="19486000" />
     </task>
     <servers />
   </component>
