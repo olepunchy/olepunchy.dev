@@ -9,12 +9,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="description" content="Jeremy Novak's portfolio and blog">
+    <meta name="keywords" content=".Net, C#, Blazor, MVC, API, gRPC, Docker, golang, portfolio, blog">
+    <meta name="author" content="Jeremy Novak">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>olepunchy</title>
+    <title>olepunchy.io | Full Stack Engineering</title>
     <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <link href="css/site.css" rel="stylesheet" />
-    <link href="olepunchy.styles.css" rel="stylesheet" />
+    
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />
@@ -31,5 +34,13 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+         return new bootstrap.Tooltip(tooltipTriggerEl)
+     })
+    </script>
 </body>
 </html>
