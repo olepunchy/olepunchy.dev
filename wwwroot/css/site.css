@@ -247,6 +247,19 @@ main {
   color: var(--contact);
 }
 
+.button-submit {
+  background-color: var(--blue);
+  color: var(--background-color);
+  border: 1px solid var(--blue);
+  transition: var(--transition-speed) ease;
+}
+
+.button-submit:hover {
+  background-color: var(--background-color);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+}
+
 .social-button {
   /* min-width: 2rem; */
   /* max-width: 2rem; */

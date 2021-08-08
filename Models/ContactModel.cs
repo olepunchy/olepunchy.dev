@@ -7,18 +7,11 @@ namespace olepunchy.Models {
     public class ContactModel {
 
         // NOTE:
-        // Requiring a First Name max length 100, min length 2 (xi)
+        // Requiring a Name with a maximum length of 100 and minimum length of 2 characters.
         [Required]
         [MaxLength(100)]
         [MinLength(2)]
-        public string FirstName { get; set; }
-
-        // NOTE:
-        // Requiring a Last Name max length 100, min length 2 (xi)
-        [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
-        public string LastName { get; set; }
+        public string Name { get; set; }
 
         // NOTE:
         // Requiring an Email Address minimum length 5 (a@a.a)
