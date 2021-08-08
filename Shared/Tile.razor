@@ -1,0 +1,13 @@
+<div class="col-1 svg-icon-lang">
+    <Tooltip Text="@Tooltip">
+        <a href="@Url" target="_blank">
+            <img src="@Image" alt="">
+        </a> 
+    </Tooltip> 
+</div>
+
+@code {
+    [Parameter] public string Image { get; set; }
+    [Parameter] public string Tooltip { get; set; }
+    [Parameter] public string Url { get; set; }
+}
