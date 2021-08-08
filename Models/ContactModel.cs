@@ -35,11 +35,6 @@ namespace olepunchy.Models {
         public string Message { get; set; }
 
         // TODO:
-        // Implement some form of logging when this contact form was submitted
-        [NotMapped]
-        public DateTime ContactDate { get; set; }
-
-        // TODO:
         // Implement some form of logging if this contact form submit was successful
         [NotMapped]
         public bool Success { get; set; }
