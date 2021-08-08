@@ -1,0 +1,45 @@
+@inject Services.IMailService _mailService
+@using Models
+
+<h3>Contact Jeremy</h3>
+
+<EditForm Model="@_contactModel" OnSubmit="@OnSubmit">
+    @* <DataAnnotationsValidator /> *@
+
+    <label for="@_contactModel.FirstName" class="form-label">First Name:</label>
+    <InputText Class="form-control" @bind-Value="_contactModel.FirstName" />
+    @* <ValidationMessage For="_contactModel.FirstName" /> *@
+
+    <label for="@_contactModel.LastName" class="form-label">Last Name:</label>
+    <InputText Class="form-control" @bind-Value="_contactModel.LastName" />
+    @* <ValidationMessage For="_contactModel.LastName" /> *@
+    
+    <label for="@_contactModel.EmailAddress" class="form-label">Email Address:</label>
+    <InputText Class="form-control" @bind-Value="_contactModel.EmailAddress" />
+    @* <ValidationMessage For="_contactModel.EmailAddress" /> *@
+    
+    <label for="@_contactModel.Subject" class="form-label">Subject:</label>
+    <InputText Class="form-control" @bind-Value="_contactModel.Subject" />
+    @* <ValidationMessage For="_contactModel.Subject" /> *@
+    
+    <label for="@_contactModel.Message" class="form-label">Message:</label>
+    <InputText Class="form-control" @bind-Value="_contactModel.Message" />
+    @* <ValidationMessage For="_contactModel.Message" /> *@
+
+    <button class="btn btn-primary mt-3" type="submit">Submit</button>
+</EditForm>
+
+@code {
+
+    private readonly ContactModel _contactModel = new() {
+        ContactDate = DateTime.Now
+    };
+
+    private async Task OnSubmit() {
+        _contactModel.Success = true;
+        _contactModel.Message += $"{_contactModel.FirstName} send you an email.";
+        _contactModel.Message += $"Sent from Contact form on olepunchy.io at {_contactModel.ContactDate}";
+
+        await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message); 
+    }    
+}

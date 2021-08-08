@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using olepunchy.Data;
+using olepunchy.Services;
+using olepunchy.Models;
 
 namespace olepunchy
 {
@@ -26,9 +28,19 @@ namespace olepunchy
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // NOTE: Add the RazorPages middleware
             services.AddRazorPages();
+            
+            // NOTE: Add the ServerSideBlazor middleware
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            
+            // NOTE: 
+            // Default project middleware, keeping for example
+            // services.AddSingleton<WeatherForecastService>()
+          
+            // NOTE: Register the MailService middleware on startup
+            services.AddSingleton(Configuration.GetSection("MailSettings").Get<MailSettings>());
+            services.AddScoped<IMailService, MailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
