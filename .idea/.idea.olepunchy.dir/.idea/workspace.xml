@@ -4,9 +4,8 @@
     <projectFile>olepunchy.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Pages/About.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="Added the About.razor page back to the project.">
+      <change beforePath="$PROJECT_DIR$/Data/FizzBuzz.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/FizzBuzz.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +107,16 @@
       <option name="presentableId" value="Default" />
       <updated>1628346664714</updated>
       <workItem from="1628346681990" duration="19672000" />
-      <workItem from="1628427357202" duration="505000" />
+      <workItem from="1628427357202" duration="1022000" />
     </task>
+    <task id="LOCAL-00001" summary="Added the About.razor page back to the project.">
+      <created>1628427940892</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1628427940892</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,5 +137,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Added the About.razor page back to the project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the About.razor page back to the project." />
   </component>
 </project>
