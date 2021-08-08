@@ -16,7 +16,7 @@ namespace olepunchy.Services {
         public async Task SendEmailAsync(string fromAddress, string subject, string body) {
             MailMessage message = new MailMessage();
             SmtpClient smtp = new SmtpClient();
-            message.From = new MailAddress(_mailSettings.FromAddress);
+            message.From = new MailAddress(fromAddress);
             message.To.Add(new MailAddress(_mailSettings.ToAddress));
             message.Subject = subject;
             message.IsBodyHtml = true;

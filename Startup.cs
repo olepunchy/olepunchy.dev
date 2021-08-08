@@ -39,7 +39,8 @@ namespace olepunchy
             // services.AddSingleton<WeatherForecastService>()
           
             // NOTE: Register the MailService middleware on startup
-            services.AddSingleton(Configuration.GetSection("MailSettings").Get<MailSettings>());
+            // services.AddSingleton(Configuration.GetSection("MailSettings").Get<MailSettings>());
+            services.AddSingleton<MailSettings>();
             services.AddScoped<IMailService, MailService>();
         }
 
