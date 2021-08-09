@@ -360,29 +360,6 @@ main {
   color: var(--background-color);
 }
 
-/*************************************************
- * CSS Tooltips
- *************************************************/
-/* .tooltip { */
-/*   position: relative; */
-/*   display: inline-block; */
-/*   border: 1px solid black; */
-/* } */
-
-/* .tooltip .tooltiptext { */
-/*   /\* visibility: hidden; *\/ */
-/*   width: 120px; */
-/*   background-color: black; */
-/*   color: white; */
-/*   border-radius: 5px; */
-/*   padding: 5px 0; */
-/*   position: absolute; */
-/*   z-index: 100; */
-/* } */
-
-/* .tooltip:hover .tooltiptext { */
-/*   visibility: visible; */
-/* } */
 .error-message {
   font-size: 12px;
   color: var(--red);

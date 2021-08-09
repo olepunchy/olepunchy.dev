@@ -65,41 +65,28 @@
 </div>
 
 @code {
-    private readonly ContactModel _contactModel = new(); 
-    private bool _isDisabled = true;
-    
-    private readonly Timer _timer = new(50);
+    private readonly ContactModel _contactModel = new();
+    private EditContext _editContext;
+    private bool _isDisabled { get; set; } = false;
+    private readonly Timer _timer = new(1000);
 
-    protected override void OnInitialized() {
-        _timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
-        _timer.Start();
-    }
 
-    private void OnTimerCallback() {
-        _ = InvokeAsync(() => {
-            if (!string.IsNullOrEmpty(_contactModel.Name) &&
-                !string.IsNullOrEmpty(_contactModel.EmailAddress) &&
-                !string.IsNullOrEmpty(_contactModel.Subject) &&
-                !string.IsNullOrEmpty(_contactModel.Message)) {
-                    _isDisabled = false;
-                    StateHasChanged();
-            } else {
-                _isDisabled = true;
-                StateHasChanged();
-            }
-        });
-    }
+    // protected override void OnInitialized() {
+    //     _editContext = new EditContext(_contactModel);
+    //     _editContext.OnFieldChanged += EditContext_OnFieldChanged;
+    //     _isDisabled = false;
+    // }
+
+    // private void EditContext_OnFieldChanged(object sender, FieldChangedEventArgs eventArgs) {
+    //     _isDisabled = _editContext.Validate();
+    //     StateHasChanged();
+    //     ShouldRender();
+    //     Console.WriteLine(_isDisabled);
+    // }
     
     private async Task OnValidSubmit() {
         await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message);
-        _timer.Enabled = false;
-        _timer.Dispose();
         
         _navManager.NavigateTo("/thanks");
-    }
-
-    private async Task OnInvalidSubmit() {
-        // TODO: Show Toast Message that there is a problem
-        await Task.CompletedTask;
     }
 }
