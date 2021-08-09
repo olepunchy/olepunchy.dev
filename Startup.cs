@@ -34,14 +34,13 @@ namespace olepunchy
             // NOTE: Add the ServerSideBlazor middleware
             services.AddServerSideBlazor();
             
-            // NOTE: 
-            // Default project middleware, keeping for example
-            // services.AddSingleton<WeatherForecastService>()
-          
             // NOTE: Register the MailService middleware on startup
             // services.AddSingleton(Configuration.GetSection("MailSettings").Get<MailSettings>());
             services.AddSingleton<MailSettings>();
             services.AddScoped<IMailService, MailService>();
+            
+            // NOTE: Register the ToastService middleware on startup
+            services.AddScoped<ToastService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

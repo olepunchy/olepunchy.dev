@@ -264,6 +264,13 @@ main {
   border: 1px solid var(--blue);
 }
 
+.button-disabled {
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+  border: 1px solid var(--foreground-color);
+  transition: var(--transition-speed) ease;
+}
+
 .social-button {
   /* min-width: 2rem; */
   /* max-width: 2rem; */
@@ -376,3 +383,7 @@ main {
 /* .tooltip:hover .tooltiptext { */
 /*   visibility: visible; */
 /* } */
+.error-message {
+  font-size: 12px;
+  color: var(--red);
+}

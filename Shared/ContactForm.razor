@@ -1,8 +1,14 @@
-@inject Services.IMailService _mailService
+@inject IMailService _mailService
 @inject NavigationManager _navManager
+@inject ToastService _toastService
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.Extensions.DependencyInjection
 @using Models
+@using System.Timers
+@using olepunchy.Enums
+@using ValidationSummary = Microsoft.AspNetCore.Mvc.Rendering.ValidationSummary
+@using System.Text.RegularExpressions
+@using System.Globalization
 
 <div class="row my-4">
     <h3 class="violet text-center">Contact Jeremy</h3>
@@ -10,23 +16,40 @@
 
 <div class="row my-2 justify-content-center">
     <div class="col-6">
-        <EditForm Model="@_contactModel" OnSubmit="@OnSubmit">
+        <EditForm Model="@_contactModel" OnValidSubmit="@OnValidSubmit">
+            <DataAnnotationsValidator/>
 
             <div class="mb-3">
                 <label for="@_contactModel.Name" class="form-label">Name:</label>
-                <InputText Class="form-control" @bind-Value="_contactModel.Name"/>
+                <InputText Class="form-control" @bind-Value="_contactModel.Name" Id="Name"/>
+                <div class="error-message">
+                    <ValidationMessage For="@(() => _contactModel.Name)" />
+                </div>
             </div>
 
             <label for="@_contactModel.EmailAddress" class="mt-2 form-label">Email Address:</label>
-            <InputText Class="form-control" @bind-Value="_contactModel.EmailAddress"/>
+            <InputText Class="form-control" @bind-Value="_contactModel.EmailAddress" Id="EmailAddress"/>
+            <div class="error-message">
+                <ValidationMessage For="@(() => _contactModel.EmailAddress)" />
+            </div>
 
             <label for="@_contactModel.Subject" class="mt-2 form-label">Subject:</label>
-            <InputText Class="form-control" @bind-Value="_contactModel.Subject"/>
+            <InputText Class="form-control" @bind-Value="_contactModel.Subject" Id="Subject"/>
+            <div class="error-message">
+                <ValidationMessage For="@(() => _contactModel.Subject)" />
+            </div>
 
             <label for="@_contactModel.Message" class="mt-2 form-label">Message:</label>
-            <InputTextArea Rows="6" Class="form-control" @bind-Value="_contactModel.Message"/>
+            <InputTextArea Rows="6" Class="form-control" @bind-Value="_contactModel.Message" Id="Message"/>
+            <div class="error-message">
+                <ValidationMessage For="@(() => _contactModel.Message)" />
+            </div>
 
-            <button class="btn button-submit mt-3" type="submit">Submit</button>
+            @if (_isDisabled) {
+                <button class="btn button-disabled mt-3" type="submit" disabled>Send Message</button>
+            } else {
+                <button class="btn button-submit mt-3" type="submit">Send Message</button>
+            }
         </EditForm>
 
         <!-- Social Icons -->
@@ -42,14 +65,41 @@
 </div>
 
 @code {
-
     private readonly ContactModel _contactModel = new(); 
+    private bool _isDisabled = true;
+    
+    private readonly Timer _timer = new(50);
 
-    private async Task OnSubmit() {
-        _contactModel.Success = true;
+    protected override void OnInitialized() {
+        _timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
+        _timer.Start();
+    }
 
-        await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message); 
-       
+    private void OnTimerCallback() {
+        _ = InvokeAsync(() => {
+            if (!string.IsNullOrEmpty(_contactModel.Name) &&
+                !string.IsNullOrEmpty(_contactModel.EmailAddress) &&
+                !string.IsNullOrEmpty(_contactModel.Subject) &&
+                !string.IsNullOrEmpty(_contactModel.Message)) {
+                    _isDisabled = false;
+                    StateHasChanged();
+            } else {
+                _isDisabled = true;
+                StateHasChanged();
+            }
+        });
+    }
+    
+    private async Task OnValidSubmit() {
+        await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message);
+        _timer.Enabled = false;
+        _timer.Dispose();
+        
         _navManager.NavigateTo("/thanks");
-    }    
+    }
+
+    private async Task OnInvalidSubmit() {
+        // TODO: Show Toast Message that there is a problem
+        await Task.CompletedTask;
+    }
 }
