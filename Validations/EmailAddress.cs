@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace olepunchy.Validations {
-    public class EmailValid : ValidationAttribute {
+    public class EmailAddress : ValidationAttribute {
         public override bool IsValid(object value) {
             var input = value as string;
 

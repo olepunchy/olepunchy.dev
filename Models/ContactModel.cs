@@ -1,9 +1,4 @@
-using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Globalization;
-using System.Text.RegularExpressions;
-using olepunchy.Validations;
 
 namespace olepunchy.Models {
 
@@ -17,9 +12,9 @@ namespace olepunchy.Models {
         public string Name { get; set; }
 
         // NOTE:
-        // Requiring an Email Address minimum length 5 (a@a.a)
+        // Using custom validations with a standard Regex check to validate input.
         [Required]
-        [EmailValid(ErrorMessage = "Please enter a valid email address.")]
+        [Validations.EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string EmailAddress { get; set; }
 
         // NOTE:
