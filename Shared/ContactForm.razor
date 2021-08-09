@@ -45,11 +45,12 @@
                 <ValidationMessage For="@(() => _contactModel.Message)" />
             </div>
 
-            @if (_isDisabled) {
-                <button class="btn button-disabled mt-3" type="submit" disabled>Send Message</button>
-            } else {
+            @* @if (_isDisabled) { *@
+            @*     <button class="btn button-disabled mt-3" type="submit" disabled>Send Message</button> *@
+            @* } else { *@
+            @*     <button class="btn button-submit mt-3" type="submit">Send Message</button> *@
+            @* } *@
                 <button class="btn button-submit mt-3" type="submit">Send Message</button>
-            }
         </EditForm>
 
         <!-- Social Icons -->
@@ -66,23 +67,6 @@
 
 @code {
     private readonly ContactModel _contactModel = new();
-    private EditContext _editContext;
-    private bool _isDisabled { get; set; } = false;
-    private readonly Timer _timer = new(1000);
-
-
-    // protected override void OnInitialized() {
-    //     _editContext = new EditContext(_contactModel);
-    //     _editContext.OnFieldChanged += EditContext_OnFieldChanged;
-    //     _isDisabled = false;
-    // }
-
-    // private void EditContext_OnFieldChanged(object sender, FieldChangedEventArgs eventArgs) {
-    //     _isDisabled = _editContext.Validate();
-    //     StateHasChanged();
-    //     ShouldRender();
-    //     Console.WriteLine(_isDisabled);
-    // }
     
     private async Task OnValidSubmit() {
         await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message);
