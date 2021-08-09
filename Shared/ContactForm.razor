@@ -8,7 +8,7 @@
     <h3 class="violet text-center">Contact Jeremy</h3>
 </div>
 
-<div class="row my-4 justify-content-center">
+<div class="row my-2 justify-content-center">
     <div class="col-6">
         <EditForm Model="@_contactModel" OnSubmit="@OnSubmit">
 
@@ -17,14 +17,14 @@
                 <InputText Class="form-control" @bind-Value="_contactModel.Name"/>
             </div>
 
-            <label for="@_contactModel.EmailAddress" class="form-label">Email Address:</label>
+            <label for="@_contactModel.EmailAddress" class="mt-2 form-label">Email Address:</label>
             <InputText Class="form-control" @bind-Value="_contactModel.EmailAddress"/>
 
-            <label for="@_contactModel.Subject" class="form-label">Subject:</label>
+            <label for="@_contactModel.Subject" class="mt-2 form-label">Subject:</label>
             <InputText Class="form-control" @bind-Value="_contactModel.Subject"/>
 
-            <label for="@_contactModel.Message" class="form-label">Message:</label>
-            <InputTextArea Rows="8" Class="form-control" @bind-Value="_contactModel.Message"/>
+            <label for="@_contactModel.Message" class="mt-2 form-label">Message:</label>
+            <InputTextArea Rows="6" Class="form-control" @bind-Value="_contactModel.Message"/>
 
             <button class="btn button-submit mt-3" type="submit">Submit</button>
         </EditForm>
