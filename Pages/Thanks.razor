@@ -1,0 +1,43 @@
+@inject NavigationManager _navManager
+@using System.Timers
+@page "/thanks"
+
+<Container>
+    <div class="d-flex flex-column justify-content-center align-content-center" style="height:25vh;">
+        <div class="col text-center mt-4">
+            <h3 class="violet">
+                Thanks for reaching out!
+            </h3>
+        </div>
+        <div class="col text-center mt-2">
+            <small>This page will redirect in <span class="green">@Count.ToString()</span></small>
+        </div>
+    </div>
+</Container>
+
+@code {
+    private int Count { get; set; } = 5;
+    private readonly Timer _timer = new(1000);
+    
+    protected override void OnInitialized() {
+        _timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
+        _timer.Start();
+    }
+
+    private void OnTimerCallback() {
+        _ = InvokeAsync(() => {
+            if (Count > 0) {
+                Count--;
+                StateHasChanged();
+            } else {
+                Count = 0;
+                _timer.Dispose();
+                Redirect();
+            }
+        });
+    }
+
+    private void Redirect() { 
+        _navManager.NavigateTo("/");
+    } 
+}

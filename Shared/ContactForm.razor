@@ -1,4 +1,5 @@
 @inject Services.IMailService _mailService
+@inject NavigationManager _navManager
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.Extensions.DependencyInjection
 @using Models
@@ -48,5 +49,7 @@
         _contactModel.Success = true;
 
         await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message); 
+       
+        _navManager.NavigateTo("/thanks");
     }    
 }
