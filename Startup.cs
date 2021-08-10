@@ -39,8 +39,10 @@ namespace olepunchy {
             services.AddScoped<ToastService>();
 
             // TODO: Just prove this works for now
-            var markdownServer = new MarkDownService();
+            var markdownServer = new MarkdownService();
             markdownServer.ReadMarkdownFiles();
+            // markdownServer.PrintPostInformation();
+            markdownServer.DebugPrintAvailablePosts();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
