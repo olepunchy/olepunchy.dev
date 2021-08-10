@@ -1,32 +1,33 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
 using olepunchy.Models;
 
 namespace olepunchy.Services {
 
-    public class MarkdownService {
+    public class PostService {
+
+        private const string POST_PATH = "Markdown";
+        private const string POST_EXT = "*.md";
 
         public List<Post> Posts { get; set; } = new();
 
+        public PostService() {
+            LoadPosts();
+        }
 
-        // NOTE: Read all of the markdown files
-        public void ReadMarkdownFiles() {
+        private void LoadPosts() {
 
-            foreach (string file in Directory.EnumerateFiles("Blog/Markdown", "*.md")) {
+            foreach (string file in Directory.EnumerateFiles(POST_PATH, POST_EXT)) {
 
                 Post post = GetPostFromFile(file);
 
                 Posts.Add(post);
             }
-        }
 
-        // TODO: Simple debug function that prints the posts
-        public void DebugPrintAvailablePosts() {
-            foreach (var post in Posts) {
-                Console.WriteLine($"Created: {post.Created}, Title: {post.Title}, Content: {post.Markdown}");
-            }
+            DebugPrintAvailablePosts();
+
         }
 
         private Post GetPostFromFile(string file) {
@@ -35,7 +36,7 @@ namespace olepunchy.Services {
 
             Post post = new Post();
             post.Markdown = contents;
-            post.Html = ConvertMarkDownToHtml(post.Markdown);
+            post.Html = MarkdownToHtml(post.Markdown);
 
             post.Created = File.GetCreationTime(file);
             post.Title = GetTitleFromFile(file);
@@ -43,7 +44,7 @@ namespace olepunchy.Services {
             return post;
         }
 
-        private string ConvertMarkDownToHtml(string markdown) {
+        private string MarkdownToHtml(string markdown) {
             var pipeline = new Markdig.MarkdownPipelineBuilder().Build();
 
             return Markdig.Markdown.ToHtml(markdown, pipeline);
@@ -56,6 +57,12 @@ namespace olepunchy.Services {
             title = title.TrimStart();
 
             return title;
+        }
+
+        private void DebugPrintAvailablePosts() {
+            foreach (var post in Posts) {
+                Console.WriteLine($"Created: {post.Created.ToString()}, Title: {post.Title}, Markdown: {post.Markdown}, HTML: {post.Html}");
+            }
         }
     }
 }

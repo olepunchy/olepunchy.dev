@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace olepunchy.Models {
 
-    public class ContactModel {
+    public class Contact {
 
         // NOTE:
         // Requiring a Name with a maximum length of 100 and minimum length of 2 characters.

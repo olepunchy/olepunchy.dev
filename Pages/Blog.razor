@@ -1,0 +1,14 @@
+@inject PostService _postService
+@page "/blog"
+
+<Container>
+@foreach (var post in _postService.Posts) {
+   <div class="row">
+      <h5>@post.Title</h5>
+      <p>@post.Created.ToString()</p>
+   </div>
+}
+</Container>
+
+@code {
+}

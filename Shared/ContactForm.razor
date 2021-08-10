@@ -16,33 +16,33 @@
 
 <div class="row my-2 justify-content-center">
     <div class="col-6">
-        <EditForm Model="@_contactModel" OnValidSubmit="@OnValidSubmit">
+        <EditForm Model="@_contact" OnValidSubmit="@OnValidSubmit">
             <DataAnnotationsValidator/>
 
             <div class="mb-3">
-                <label for="@_contactModel.Name" class="form-label">Name:</label>
-                <InputText Class="form-control" @bind-Value="_contactModel.Name" Id="Name"/>
+                <label for="@_contact.Name" class="form-label">Name:</label>
+                <InputText Class="form-control" @bind-Value="_contact.Name" Id="Name"/>
                 <div class="error-message">
-                    <ValidationMessage For="@(() => _contactModel.Name)" />
+                    <ValidationMessage For="@(() => _contact.Name)" />
                 </div>
             </div>
 
-            <label for="@_contactModel.EmailAddress" class="mt-2 form-label">Email Address:</label>
-            <InputText Class="form-control" @bind-Value="_contactModel.EmailAddress" Id="EmailAddress"/>
+            <label for="@_contact.EmailAddress" class="mt-2 form-label">Email Address:</label>
+            <InputText Class="form-control" @bind-Value="_contact.EmailAddress" Id="EmailAddress"/>
             <div class="error-message">
-                <ValidationMessage For="@(() => _contactModel.EmailAddress)" />
+                <ValidationMessage For="@(() => _contact.EmailAddress)" />
             </div>
 
-            <label for="@_contactModel.Subject" class="mt-2 form-label">Subject:</label>
-            <InputText Class="form-control" @bind-Value="_contactModel.Subject" Id="Subject"/>
+            <label for="@_contact.Subject" class="mt-2 form-label">Subject:</label>
+            <InputText Class="form-control" @bind-Value="_contact.Subject" Id="Subject"/>
             <div class="error-message">
-                <ValidationMessage For="@(() => _contactModel.Subject)" />
+                <ValidationMessage For="@(() => _contact.Subject)" />
             </div>
 
-            <label for="@_contactModel.Message" class="mt-2 form-label">Message:</label>
-            <InputTextArea Rows="6" Class="form-control" @bind-Value="_contactModel.Message" Id="Message"/>
+            <label for="@_contact.Message" class="mt-2 form-label">Message:</label>
+            <InputTextArea Rows="6" Class="form-control" @bind-Value="_contact.Message" Id="Message"/>
             <div class="error-message">
-                <ValidationMessage For="@(() => _contactModel.Message)" />
+                <ValidationMessage For="@(() => _contact.Message)" />
             </div>
 
             @* @if (_isDisabled) { *@
@@ -66,10 +66,10 @@
 </div>
 
 @code {
-    private readonly ContactModel _contactModel = new();
+    private readonly Contact _contact = new();
     
     private async Task OnValidSubmit() {
-        await _mailService.SendEmailAsync(_contactModel.EmailAddress, _contactModel.Subject, _contactModel.Message);
+        await _mailService.SendEmailAsync(_contact.EmailAddress, _contact.Subject, _contact.Message);
         
         _navManager.NavigateTo("/thanks");
     }

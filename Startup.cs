@@ -38,11 +38,10 @@ namespace olepunchy {
             // NOTE: Register the ToastService middleware on startup
             services.AddScoped<ToastService>();
 
-            // TODO: Just prove this works for now
-            var markdownServer = new MarkdownService();
-            markdownServer.ReadMarkdownFiles();
-            // markdownServer.PrintPostInformation();
-            markdownServer.DebugPrintAvailablePosts();
+            // NOTE: Register teh PostService middleware on startup
+            // services.AddScoped<IPostService, PostService>();
+            // services.AddSingleton<IPostService, PostService>();
+            services.AddSingleton<PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
