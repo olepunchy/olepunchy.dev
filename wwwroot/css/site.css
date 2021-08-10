@@ -304,32 +304,6 @@ main {
   border-radius: 7px;
 }
 
-.svg-icon {
-  height: 168px;
-  padding: 0.5rem;
-  margin-right: 1rem;
-}
-
-.svg-icon-lang img {
-  height: 60px;
-  width: 60px;
-  margin: 0 0.5rem;
-  padding: 0.5rem;
-  border-radius: 7px;
-  background-color: var(--navbar-color);
-  border: 1px solid var(--black);
-}
-
-/*.svg-icon-light svg {*/
-/*  height: 60px;*/
-/*  width: 60px;*/
-/*  margin: 0 0.5rem;*/
-/*  padding: 0.5rem;*/
-/*  border-radius: 7px;*/
-/*  background-color: var(--foreground-color);*/
-/*  border: 1px solid var(--black);*/
-/*}*/
-
 .card-toolbox h5 {
   padding: 0.5rem 0.5rem;
   text-transform: uppercase;
