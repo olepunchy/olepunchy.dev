@@ -28,7 +28,10 @@ Personal portfolio and blog site written in [[https://dotnet.microsoft.com/apps/
 
 ** TODO
 
-[] *Contact Page*  - Redirect on success to a nice thank you page.
+[] *Contact Page* - Redirect on success to a nice thank you page.
 [] *Contact Page* - Clean up the CSS particularly the spacing between elements
+[] *Contact Page* - Needs a Captcha of some kind.
+[] *Contact Page* - Button shouldn't be enabled with invalid input.
+[] *Contact Page* - Email alway says it came from me, Email Address field ignored.
 [] *Blog* - Implement [[https://github.com/xoofx/makdig][Markdig]] blog.
 [] *About* - Download PDF copy of my Resume from the About page.
