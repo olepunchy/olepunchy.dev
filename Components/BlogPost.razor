@@ -1,5 +1,10 @@
-<h3>BlogPost</h3>
+@using Models
+@page "/blog/{BlogPost}"
+
+<Container>
+  @Post.Html 
+</Container>
 
 @code {
-    
+    [Parameter] public Post Post { get; set; }  
 }
