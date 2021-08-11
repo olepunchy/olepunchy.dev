@@ -1,1 +1,2 @@
-# My First Blog Post!
+# Getting started with Blazor
+<!--blazor.svg-->

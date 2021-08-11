@@ -1,0 +1,28 @@
+@using Models
+
+<div class="row align-items-start post">
+    <!-- Image -->
+    <div class="col-1 align-self-center post-image">
+        <img src="img/@Post.Image" alt=""/>
+    </div>
+
+    <!-- Title -->
+    <div class="col-6 align-self-center">
+        <h5 class="post-title">@Post.Title</h5>
+    </div>
+   
+    <!-- Created -->
+    <div class="col-2 align-self-end mx-auto">
+        <p class="text-muted post-created">@Post.Created.ToShortDateString()</p>
+    </div>
+   
+    <!-- Author -->
+    <div class="col-2 align-self-end mx-auto">
+        <p class="post-author">olepunchy</p>
+    </div>
+    
+</div>
+
+@code {
+    [Parameter] public Post Post { get; set; }
+}

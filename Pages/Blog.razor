@@ -2,13 +2,13 @@
 @page "/blog"
 
 <Container>
-@foreach (var post in _postService.Posts) {
-   <div class="row">
-      <h5>@post.Title</h5>
-      <p>@post.Created.ToString()</p>
-   </div>
-}
+    <div class="grid">
+        @foreach (var post in _postService.Posts) {
+            <PostCard Post="@post"/>
+        }
+    </div>
 </Container>
 
 @code {
+    // TODO: Fix the layout
 }

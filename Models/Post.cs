@@ -5,6 +5,7 @@ namespace olepunchy.Models {
 
     public class Post {
 
+        public string Image { get; set; }
         public DateTime Created { get; set; }
         public string Markdown { get; set; }
         public string Html { get; set; }
