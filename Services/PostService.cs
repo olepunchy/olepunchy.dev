@@ -16,6 +16,7 @@ namespace olepunchy.Services {
 
         public PostService() {
             LoadPosts();
+            SortPosts();
         }
 
         private void LoadPosts() {
@@ -26,6 +27,11 @@ namespace olepunchy.Services {
 
                 Posts.Add(post);
             }
+        }
+
+        private void SortPosts() {
+            // Sorts posts so most recent are at the top.
+            Posts = new List<Post>(Posts.OrderByDescending(p => p.Created.Millisecond));
         }
 
         private Post GetPostFromFile(string file) {

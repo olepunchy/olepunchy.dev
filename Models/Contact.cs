@@ -3,7 +3,8 @@ using System.ComponentModel.DataAnnotations;
 namespace olepunchy.Models {
 
     public class Contact {
-
+        // TODO: Get all fields validating in a decent way
+        
         // NOTE:
         // Requiring a Name with a maximum length of 100 and minimum length of 2 characters.
         [Required]

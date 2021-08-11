@@ -4,7 +4,8 @@
 <a href="/blog">
     <div class="shadow row align-items-start post">
          <!-- Image -->
-        <div class="col-1 align-self-center post-image">
+        @* <div class="col-1 align-self-center post-image"> *@
+        <div class="col-1 post-image">
             <img src="img/@Post.Image" alt=""/>
         </div>
 
@@ -14,7 +15,7 @@
         </div>
 
         <!-- Created -->
-        <div class="col-1 align-self-end mx-auto">
+        <div class="col-1 align-self-center mx-auto">
             <p class="text-muted post-created">@Post.Created.ToShortDateString()</p>
         </div>
 

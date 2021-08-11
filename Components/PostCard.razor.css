@@ -5,13 +5,9 @@
    border-radius: 7px;
 }
 
-.post-image {
-    margin: 0.25rem;
-}
-
 .post-image img {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
 }
 
 .post-title {

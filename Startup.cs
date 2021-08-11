@@ -31,7 +31,6 @@ namespace olepunchy {
             services.AddServerSideBlazor();
 
             // NOTE: Register the MailService middleware on startup
-            // services.AddSingleton(Configuration.GetSection("MailSettings").Get<MailSettings>());
             services.AddSingleton<MailSettings>();
             services.AddScoped<IMailService, MailService>();
 
@@ -39,8 +38,6 @@ namespace olepunchy {
             services.AddScoped<ToastService>();
 
             // NOTE: Register teh PostService middleware on startup
-            // services.AddScoped<IPostService, PostService>();
-            // services.AddSingleton<IPostService, PostService>();
             services.AddSingleton<PostService>();
         }
 
