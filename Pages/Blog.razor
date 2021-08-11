@@ -2,6 +2,8 @@
 @page "/blog"
 
 <Container>
+    <BlogSearch/>
+    
     <div class="grid">
         @foreach (var post in _postService.Posts) {
             <PostCard Post="@post"/>
