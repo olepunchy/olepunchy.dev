@@ -1,5 +1,5 @@
 namespace olepunchy.Enums {
-    public enum ButtonType {
+    public enum ButtonEnum {
         Blog,
         Contact,
         Email,
