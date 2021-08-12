@@ -1,0 +1,30 @@
+@using olepunchy.Enums
+
+<a href="@Url" class="text-center button @Class">@Text</a>
+
+@code {
+    [Parameter] public string Url { get; set; }
+    [Parameter] public string Text { get; set; }
+    [Parameter] public string Class { get; set; }
+    [Parameter] public ButtonType Type { get; set; }
+
+    protected override void OnInitialized(){
+        switch (Type) {
+            case ButtonType.Blog:
+                Class = "blog";
+                break;
+                
+            case ButtonType.Contact:
+                Class = "contact";
+                break;
+                    
+            case ButtonType.Email:
+                Class = "email";
+                break;
+                
+            case ButtonType.Portfolio:
+                Class = "portfolio";
+                break;
+        }
+    }
+}

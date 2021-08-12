@@ -1,0 +1,57 @@
+.button {
+    width: 10rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 16px;
+    text-transform: lowercase;
+    border: none;
+    border-radius: 3px;
+    color: var(--background-color);
+    transition: var(--transition-speed) ease-in-out;
+}
+
+.blog {
+    background-color: var(--blog);
+    border: 1px solid var(--blog);
+}
+
+.blog:hover {
+    background-color: var(--background-color);
+    border: 1px solid var(--blog);
+    color: var(--blog);
+}
+
+.contact {
+    background-color: var(--contact);
+    border: 1px solid var(--contact);
+}
+
+.contact:hover {
+    background-color: var(--background-color);
+    border: 1px solid var(--contact);
+    color: var(--contact);
+}
+
+.email {
+    background-color: var(--blue);
+    color: var(--background-color);
+    border: 1px solid var(--blue);
+    transition: var(--transition-speed) ease;
+}
+
+.email:hover {
+    background-color: var(--background-color);
+    color: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+.portfolio {
+    background-color: var(--portfolio);
+    border: 1px solid var(--portfolio);
+}
+
+.portfolio:hover {
+    background-color: var(--background-color);
+    border: 1px solid var(--portfolio);
+    color: var(--portfolio);
+}
