@@ -19,4 +19,13 @@
     <None Include="wwwroot\md\003.md" />
   </ItemGroup>
 
+<!--  <ItemGroup>-->
+<!--    <Content Include="Components\LeftTooltip.razor.css" />-->
+<!--    <Content Include="Components\MainLayout.razor.css" />-->
+<!--    <Content Include="Components\NavMenu.razor.css" />-->
+<!--    <Content Include="Components\RightTooltip.razor.css" />-->
+<!--    <Content Include="Components\Tile.razor.css" />-->
+<!--    <Content Include="Components\Tooltip.razor.css" />-->
+<!--  </ItemGroup>-->
+
 </Project>
