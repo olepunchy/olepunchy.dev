@@ -38,7 +38,9 @@ namespace olepunchy {
             services.AddScoped<ToastService>();
 
             // NOTE: Register teh PostService middleware on startup
-            // services.AddSingleton<PostService>();
+            // var ps = PostService.CreateAsync();
+            services.AddSingleton<PostService>();
+            // services.AddScoped<ps>();
 
             services.AddScoped<HttpClient>();
         }

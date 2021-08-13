@@ -1,15 +1,16 @@
 @inject HttpClient _httpClient
+@inject PostService _postService
 @page "/blog"
 
 <Container>
     <BlogSearch/>
 
-    @if (_posts == null) {
+    @if (_postService.Posts == null) {
         <p>Loading posts...</p>
     } else {
 
         <div class="grid">
-            @foreach (var post in _posts) {
+            @foreach (var post in _postService.Posts) {
                 <PostCard Post="post" />
             }
         </div>
@@ -21,12 +22,19 @@
 
 @code {
 
-    private IEnumerable<Post> _posts;
+    // private IEnumerable<Post> _posts;
+    // private PostService _postService;
 
     protected override async Task OnInitializedAsync() {
 
         try {
-            _posts = await _httpClient.GetFromJsonAsync<IEnumerable<Post>>("https://localhost:5001/data/blog-data.json");
+            // _posts = await _httpClient.GetFromJsonAsync<IEnumerable<Post>>("https://localhost:5001/data/blog-data.json");
+            // await _postService.LoadPostDataFromJson();
+            // _posts = PostService.Posts;
+            // _postService = await PostService.CreateAsync();
+            // _posts = _postService.Posts;
+            // var x = await PostService.CreateAsync();
+            // _posts = _postService.Posts;
         } catch (HttpRequestException exception) {
             Console.WriteLine($"There was an exception loading data: {exception.Message}");
         }

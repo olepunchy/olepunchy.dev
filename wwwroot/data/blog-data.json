@@ -1,29 +1,26 @@
 [
   {
     "id": 1,
-    "file": "md/001.md",
+    "file": "wwwroot/md/001.md",
     "image": "img/blazor.svg",
     "title": "Getting Started with Blazor on Linux",
     "slug": "getting_started_with_blazor_on_linux",
-    "author": "Jeremy Novak",
-    "created": ""
+    "author": "Jeremy Novak"
   },
   {
     "id": 2,
-    "file": "md/002.md",
+    "file": "wwwroot/md/002.md",
     "image": "img/docker.svg",
     "title": "Deploying a Blazor Server app to Docker",
     "slug": "deploying_a_blazor_server_app_to_docker",
-    "author": "Jeremy Novak",
-    "created": ""
+    "author": "Jeremy Novak"
   },
   {
     "id": 3,
-    "file": "md/001.md",
+    "file": "wwwroot/md/001.md",
     "image": "img/emacs.svg",
     "title": "Getting Started with Doom Emacs",
     "slug": "getting_started_with_doom_emacs",
-    "author": "Jeremy Novak",
-    "created": ""
+    "author": "Jeremy Novak"
   }
 ]
