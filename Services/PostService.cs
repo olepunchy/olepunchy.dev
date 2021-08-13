@@ -23,7 +23,7 @@ namespace olepunchy.Services {
         //     return postService;
         // }
 
-        private async Task LoadPostDataFromJson() {
+        public async Task LoadPostDataFromJson() {
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             // Pass the handler to httpclient(from you are calling api)
