@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "file": "wwwroot/md/001.md",
+    "file": "wwwroot/md/003.md",
     "image": "img/emacs.svg",
     "title": "Getting Started with Doom Emacs",
     "slug": "getting_started_with_doom_emacs",
