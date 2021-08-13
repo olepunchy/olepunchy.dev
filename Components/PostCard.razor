@@ -1,13 +1,11 @@
 @inject NavigationManager _navigationManager
-@using Models
 
 <!-- TODO: Get this routing based on the slug -->
 <a href="/blog">
     <div class="shadow row align-items-start post">
          <!-- Image -->
-        @* <div class="col-1 align-self-center post-image"> *@
         <div class="col-1 post-image">
-            <img src="img/@Post.Image" alt=""/>
+            <img src="@Post.Image" alt=""/>
         </div>
 
         <!-- Title -->
@@ -17,7 +15,7 @@
 
         <!-- Created -->
         <div class="col-1 align-self-center mx-auto">
-            <p class="text-muted post-created">@Post.Created.ToShortDateString()</p>
+            @* <p class="text-muted post-created">@Post.Created.ToShortDateString()</p> *@
         </div>
 
     </div>

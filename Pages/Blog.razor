@@ -1,18 +1,34 @@
-@inject PostService _postService
+@inject HttpClient _httpClient
 @page "/blog"
 
 <Container>
     <BlogSearch/>
-    
-    <div class="grid">
-        @foreach (var post in _postService.Posts) {
-            <PostCard Post="@post"/>
-        }
-    </div>
-    
+
+    @if (_posts == null) {
+        <p>Loading posts...</p>
+    } else {
+
+        <div class="grid">
+            @foreach (var post in _posts) {
+                <PostCard Post="post" />
+            }
+        </div>
+
+    }
+
     <SocialIcons/>
 </Container>
 
 @code {
-    // TODO: Fix the layout
+
+    private IEnumerable<Post> _posts;
+
+    protected override async Task OnInitializedAsync() {
+
+        try {
+            _posts = await _httpClient.GetFromJsonAsync<IEnumerable<Post>>("https://localhost:5001/data/blog-data.json");
+        } catch (HttpRequestException exception) {
+            Console.WriteLine($"There was an exception loading data: {exception.Message}");
+        }
+    }
 }
