@@ -1,0 +1,17 @@
+@page "/blog"
+
+<Container>
+    <BlogSearch/>
+
+    @if (_posts == null) {
+        <p>Loading posts...</p>
+    } else {
+        <div class="grid">
+            @foreach (var post in _posts) {
+                <PostBanner PostModel="post" OnSelected="SelectedPost"/>
+            }
+        </div>
+     }
+    
+    <SocialIcons/>
+</Container>

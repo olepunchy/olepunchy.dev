@@ -1,0 +1,19 @@
+<a href="/blog/@PostModel.Slug" @onclick="@(async () => await OnSelected.InvokeAsync(PostModel))">
+    <div class="shadow row align-items-center post">
+         <!-- Image -->
+        <div class="col-1 post-image">
+            <img src="@PostModel.Image" alt=""/>
+        </div>
+
+        <!-- Title -->
+        <div class="col-8 align-self-center">
+            <h5 class="post-title">@PostModel.Title</h5>
+        </div>
+
+        <!-- Created -->
+        <div class="col-1 align-self-end mx-auto">
+            <p class="text-muted post-created">@PostModel.Created.ToShortDateString()</p>
+        </div>
+
+    </div>
+</a>

@@ -1,0 +1,22 @@
+<footer class="post-view-footer">
+   <div class="row">
+      <div class="col ms-auto">
+         <span class="text-muted">Copyright &copy; 2021</span> <span class="teal">@Post.Author</span>
+      </div>
+      
+      <div class="col ms-md-auto">
+         <span clas="text-muted">Tags</span> <span class="teal">@Post.Tags</span>
+      </div>
+    
+      <div class="col-auto me-auto">
+         <span class="text-muted">@Post.Created.ToShortDateString()</span>      
+      </div>
+   </div>
+</footer>
+
+@code {
+
+   [Parameter] public PostModel Post { get; set; }
+
+}
+

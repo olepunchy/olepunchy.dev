@@ -22,6 +22,11 @@
   </ItemGroup>
 
 <!--  <ItemGroup>-->
+<!--    <Content Include="Blog\BlogSearch.razor.css" />-->
+<!--    <Content Include="Blog\PostCard.razor.css" />-->
+<!--  </ItemGroup>-->
+
+<!--  <ItemGroup>-->
 <!--    <Content Include="Components\LeftTooltip.razor.css" />-->
 <!--    <Content Include="Components\MainLayout.razor.css" />-->
 <!--    <Content Include="Components\NavMenu.razor.css" />-->

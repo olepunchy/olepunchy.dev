@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace olepunchy.Models {
+namespace olepunchy.Contact {
 
-    public class Contact {
+    public class ContactModel {
         // TODO: Get all fields validating in a decent way
         
         // NOTE:

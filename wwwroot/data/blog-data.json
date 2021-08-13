@@ -5,6 +5,7 @@
     "image": "img/blazor.svg",
     "title": "Getting Started with Blazor on Linux",
     "slug": "getting_started_with_blazor_on_linux",
+    "keywords": ["blazor", "linux"],
     "author": "Jeremy Novak"
   },
   {
@@ -13,6 +14,7 @@
     "image": "img/docker.svg",
     "title": "Deploying a Blazor Server app to Docker",
     "slug": "deploying_a_blazor_server_app_to_docker",
+    "keywords": ["blazor", "docker"],
     "author": "Jeremy Novak"
   },
   {
@@ -21,6 +23,7 @@
     "image": "img/emacs.svg",
     "title": "Getting Started with Doom Emacs",
     "slug": "getting_started_with_doom_emacs",
+    "keywords": ["emacs", "linux", "macos"],
     "author": "Jeremy Novak"
   }
 ]

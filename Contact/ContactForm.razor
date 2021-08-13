@@ -53,7 +53,7 @@
 </div>
 
 @code {
-    private readonly Contact _contact = new();
+    private readonly ContactModel _contact = new();
     
     private async Task OnValidSubmit() {
         await _mailService.SendEmailAsync(_contact.EmailAddress, _contact.Subject, _contact.Message);
