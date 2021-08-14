@@ -41,6 +41,7 @@
   --demo: #4db5bd;
   --about: #a9a1e1;
   --toolbox: #ff6c6b;
+  --link: #46d9ff;
 
   --transition-speed: 500ms;
 }
@@ -164,7 +165,7 @@ main {
 }
 
 .nav-link:hover svg {
-  color: var(--blue);
+  color: var(--link);
 }
 
 .logo {

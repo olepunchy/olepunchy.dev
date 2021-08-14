@@ -4,7 +4,7 @@
     cursor: help;
 }
 
-span {
+.top {
     visibility: hidden;
     position: absolute;
     width: 160px;
@@ -12,7 +12,6 @@ span {
     left: 50%;
     margin-left: -80px;
     background-color: #363636;
-    /*color: #fff;*/
     color: var(--foreground-color);
     text-align: center;
     padding: 5px 0;
@@ -20,7 +19,7 @@ span {
     z-index: 1;
 }
 
-span::after {
+.top::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -29,6 +28,80 @@ span::after {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
+}
+
+.bottom {
+    visibility: hidden;
+    position: absolute;
+    width: 160px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -80px;
+    background-color: #363636;
+    color: var(--foreground-color);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.bottom::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.left {
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    background-color: #363636;
+    color: var(--foreground-color);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1; 
+}
+
+.left::after {
+    content: "";
+    position: absolute;
+    top: 33%;
+    left: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent; 
+}
+
+.right {
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    background-color: #363636;
+    color: var(--foreground-color);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.right::after {
+    content: "";
+    position: absolute;
+    top: 33%;
+    right: 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent; 
 }
 
 .tooltip-wrapper:hover span {

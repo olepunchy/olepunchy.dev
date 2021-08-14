@@ -4,7 +4,7 @@
             <!-- Logo -->
             <li class="logo">
                 <!-- LeftTooltip -->
-                <LeftTooltip Text="Home">
+                <Tooltip Type="TooltipEnum.Left" Text="Home">
                 <!-- Link -->
                 <a
                     class="nav-link"
@@ -25,14 +25,14 @@
                         </g>
                     </svg>
                 </a>
-                </LeftTooltip>
+                </Tooltip>
             </li>
 
 
             <!-- About -->
             <li class="nav-item">
                     <!-- LeftTooltip -->
-                   <LeftTooltip Text="About">
+                   <Tooltip Type="TooltipEnum.Left" Text="About">
                     <!-- Link -->
                     <a class="nav-link" href="/about">
                         <!-- SVG Icon -->
@@ -63,13 +63,13 @@
                             </g>
                         </svg>
                     </a>
-                </LeftTooltip>
+                </Tooltip>
             </li>
 
             <!-- Portfolio -->
             <li class="nav-item">
                 <!-- LeftTooltip -->
-                <LeftTooltip Text="Portfolio">
+                <Tooltip Type="TooltipEnum.Left" Text="Portfolio">
                 <!-- Link -->
                 <a class="nav-link" href="/portfolio">
                     <!-- SVG Icon-->
@@ -100,13 +100,13 @@
                         </g>
                     </svg>
                 </a>
-                </LeftTooltip>
+                </Tooltip>
             </li>
 
             <!-- Blog -->
             <li class="nav-item">
                 <!-- LeftTooltip -->
-                <LeftTooltip Text="Blog">
+                <Tooltip Type="TooltipEnum.Left" Text="Blog">
                 <!-- Link -->
                 <a class="nav-link" href="/blog">
                     <!-- SVG Icon -->
@@ -137,13 +137,13 @@
                         </g>
                     </svg>
                 </a>
-                </LeftTooltip>
+                </Tooltip>
             </li>
 
             <!-- Contact -->
             <li class="nav-item">
                 <!-- LeftTooltip -->
-                <LeftTooltip Text="Contact">
+                <Tooltip Type="TooltipEnum.Left" Text="Contact">
                 <!-- Link -->
                 <a class="nav-link" href="/contact">
                     <!-- SVG Icon -->
@@ -173,19 +173,19 @@
                         </g>
                     </svg>
                 </a>
-                </LeftTooltip>
+                </Tooltip>
             </li>
         </ul>
     </nav>
 
 @code {
-    private bool collapseNavMenu = true;
+    private bool _collapseNavMenu = true;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => _collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        _collapseNavMenu = !_collapseNavMenu;
     }
 }
 
