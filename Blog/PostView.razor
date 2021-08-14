@@ -1,6 +1,10 @@
 @page "/blog/{Slug}"
 
 <Container>
+    <div class="row">
+        <img class="post-image" src="@PostModel.Image" alt="" />
+    </div>
+    
     @Body
     
     <PostFooter Post="@PostModel" />
