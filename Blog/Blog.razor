@@ -2,9 +2,16 @@
 
 <Container>
    @* TODO: Restore Search when working *@ 
-    @* <BlogSearch/> *@
+   @* <BlogSearch/> *@
+   
+   @* @if (_posts == null) { *@
+   <div class="row text-center mt-4">
+        <p>Jeremy is working on some fresh posts, check back soon(&trade;)...</p>
+   </div>
+   @* } *@
 
-    @if (_posts == null) {
+   @*
+   @if (_posts == null) {
         <p>Loading posts...</p>
     }
     else {
@@ -13,7 +20,7 @@
                 <PostBanner PostModel="post" OnSelected="SelectedPost"/>
             }
         </div>
-    }
+    }*@
 
     <SocialIcons/>
 </Container>

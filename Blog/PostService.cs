@@ -25,7 +25,7 @@ namespace olepunchy.Blog {
             
                 
             // Posts = await HttpClient.GetFromJsonAsync<IEnumerable<Post>>("https://localhost:5001/data/blog-data.json");
-            Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://localhost:5001/data/blog-data.json");
+            Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://olepunchy.io/data/blog-data.json");
             // Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://reata.olepunchy.io/json/blog-data.json");
 
             if (Posts != null) {
