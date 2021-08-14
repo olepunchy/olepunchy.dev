@@ -1,7 +1,7 @@
 .tooltip-wrapper {
     position: relative;
     display: inline-block;
-    cursor: help;
+    cursor: pointer; 
 }
 
 .top {
