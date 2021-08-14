@@ -34,6 +34,7 @@
   --black: #1b2229;
   --gray: #5b6268;
   --carnation: #ff525d;
+  --havelock: #5496D2;
 
   --portfolio: #98be65;
   --blog: #ecbe7b;
@@ -41,7 +42,8 @@
   --demo: #4db5bd;
   --about: #a9a1e1;
   --toolbox: #ff6c6b;
-  --link: #46d9ff;
+  /*--link: #46d9ff;*/
+  --link: #5496D2;
 
   --transition-speed: 500ms;
 }
@@ -101,12 +103,14 @@ body {
 }
 
 a {
-  color: var(--cyan);
+  /*color: var(--cyan);*/
+  color: var(--blue);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--cyan);
+  /*color: var(--cyan);*/
+  color: var(--blue);
   text-decoration: none;
 }
 
@@ -259,20 +263,6 @@ main {
   color: var(--background-color);
   border: 1px solid var(--foreground-color);
   transition: var(--transition-speed) ease;
-}
-
-.social-button {
-  /* min-width: 2rem; */
-  /* max-width: 2rem; */
-  min-width: 50px;
-  max-width: 50px;
-  margin: 1rem;
-  color: var(--foreground-color);
-}
-
-.social-button:hover {
-  /* color: var(--navbar-link-color); */
-  color: var(--cyan);
 }
 
 /*************************************************

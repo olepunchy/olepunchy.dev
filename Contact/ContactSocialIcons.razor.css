@@ -1,0 +1,10 @@
+.social-button {
+    min-width: 50px;
+    max-width: 50px;
+    margin: 1rem;
+    color: var(--foreground-color);
+}
+
+.social-button:hover {
+    color: var(--blue);
+}
