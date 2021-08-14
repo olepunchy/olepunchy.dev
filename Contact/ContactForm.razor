@@ -56,7 +56,12 @@
     private readonly ContactModel _contact = new();
     
     private async Task OnValidSubmit() {
-        await _mailService.SendEmailAsync(_contact.EmailAddress, _contact.Subject, _contact.Message);
+        string body = string.Empty;
+        body += $"From: {_contact.Name}";
+        body += $"\nMail Address: {_contact.EmailAddress}";
+        body += $"\nMessage: {_contact.Message}";
+        
+        await _mailService.SendEmailAsync(_contact.EmailAddress, _contact.Subject, body);
         
         _navManager.NavigateTo("/thanks");
     }

@@ -1,17 +1,19 @@
 @page "/blog"
 
 <Container>
-    <BlogSearch/>
+   @* TODO: Restore Search when working *@ 
+    @* <BlogSearch/> *@
 
     @if (_posts == null) {
         <p>Loading posts...</p>
-    } else {
+    }
+    else {
         <div class="grid">
             @foreach (var post in _posts) {
                 <PostBanner PostModel="post" OnSelected="SelectedPost"/>
             }
         </div>
-     }
-    
+    }
+
     <SocialIcons/>
 </Container>

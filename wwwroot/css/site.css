@@ -118,6 +118,10 @@ h5 {
   color: var(--violet);
 }
 
+h3 {
+  color: var(--violet);
+}
+
 main {
   margin-left: 4rem;
 }

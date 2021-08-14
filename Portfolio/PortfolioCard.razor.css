@@ -1,0 +1,35 @@
+.card-container {
+    margin: 1rem;
+    padding: 1rem;
+    width: 14rem;
+    border-radius: 7px;
+}
+
+h3 {
+    padding: 0.25rem;
+    font-size: 1.5rem;
+    color: var(--blue);
+    border-bottom: 1px solid var(--blue);
+}
+
+hr {
+    margin: 0.5rem 0;
+    color: var(--blue);
+}
+
+p {
+    font-size: 0.75rem;
+}
+
+.button-card {
+    width: fit-content;
+    color: var(--link);
+    background-color: var(--background-color);
+    border: 1px solid var(--link);
+}
+
+.button-card:hover {
+    background-color: var(--link);
+    border: 1px solid var(--link);
+    color: var(--background-color);
+}

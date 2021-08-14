@@ -16,14 +16,5 @@
     "slug": "deploying_a_blazor_server_app_to_docker",
     "keywords": ["blazor", "docker"],
     "author": "Jeremy Novak"
-  },
-  {
-    "id": 3,
-    "file": "wwwroot/md/003.md",
-    "image": "img/emacs.svg",
-    "title": "Getting Started with Doom Emacs",
-    "slug": "getting_started_with_doom_emacs",
-    "keywords": ["emacs", "linux", "macos"],
-    "author": "Jeremy Novak"
   }
 ]
