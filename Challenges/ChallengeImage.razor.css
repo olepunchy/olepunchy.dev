@@ -1,0 +1,9 @@
+.icon {
+    /*border: 1px solid yellow;*/
+    justify-content: center;
+}
+
+.icon > img {
+    width: 60px;
+    height: 60px;
+}

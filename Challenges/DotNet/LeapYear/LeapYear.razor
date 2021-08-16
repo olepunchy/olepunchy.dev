@@ -1,0 +1,81 @@
+@page "/challenges/leapyear"
+
+<ChallengeContainer>
+   <ChallengeHeader Title="Leap Year" />
+
+   <ChallengeImage Image="img/calendar-alt-duotone.svg"></ChallengeImage>
+   
+   <CodeBlock>
+      @Code
+   </CodeBlock>
+  
+   <div class="col-4 mx-4 border-1">
+      
+     <EditForm Model="@Model" OnValidSubmit="@OnValidSubmit" OnInvalidSubmit="@OnInvalidSubmit">
+         <DataAnnotationsValidator/>
+
+        <div class="mb-3">
+           <label for="@Model.Year" class="form-label">Year:</label>
+           <InputNumber @bind-Value="Model.Year" Id="Year" Style="width: 6rem;" />
+           <div class="error-message">
+              <ValidationMessage For="@(() => Model.Year)" />
+           </div>
+           
+           @Result
+           
+           <!-- TODO: Button should only be active for a valid form -->
+           <button class="btn button-card mt-4" type="submit">Leap Year?</button>
+        </div>
+     </EditForm>
+   </div>
+   
+   <ChallengeFooter />
+</ChallengeContainer>
+
+@code {
+
+   [Parameter] public string Code { get; set; }
+   private LeapYearModel Model = new();
+   private int StartYear { get; set; }
+   private MarkupString Result { get; set; }
+
+   protected override void OnInitialized() {
+      Code = @"
+public static class Leap {
+   public static bool IsLeapYear(int year) {
+      // Leap:
+      // A year is a leap year if it meets these tests:
+      // - evenly divisible by 4
+      // - not evenly divisible by 100
+      // - unless also evenly divisible by 400
+
+      // Clamp the year range to something we can work with.
+      if (year < 1 || year > 9999) {
+            return false;
+      }
+
+      return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+   }
+}";
+
+      StartYear = DateTime.Now.Year;
+      Model.Year = StartYear;
+   }
+
+   private void OnValidSubmit() {
+      bool result;
+      
+      result = Model.Year % 4 == 0 && (Model.Year % 100 != 0 || Model.Year % 400 == 0);
+
+      Result = result ? (MarkupString)$"<div class='teal mt-2'>Bingo, {Model.Year} is a leap year!</div>" 
+         : (MarkupString)$"<div class='orange mt-2'>Nope, {Model.Year} is not a leap year</div>";
+      
+      ShouldRender();
+   }
+
+   private void OnInvalidSubmit() {
+      Result = (MarkupString)"<div></div>";
+      ShouldRender();
+   }
+
+}

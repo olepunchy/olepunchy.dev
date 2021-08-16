@@ -1,5 +1,4 @@
-
-<div class="row">
+<div class="col">
    <pre class="code">
    <code class="@Language">
       @ChildContent
@@ -8,19 +7,13 @@
    
 </div>
 
-@* <pre class="code"> *@
-@* <code class="@Language"> *@
-@*    @ChildContent *@
-@* </code> *@
-@* </pre> *@
-
 @code {
-   [Inject] private IJSRuntime _jsRuntime { get; set; }
+   [Inject] private IJSRuntime JsRuntime { get; set; }
    [Parameter] public RenderFragment ChildContent { get; set; }
    [Parameter] public string Language { get; set; } = "csharp";
    
    protected override async Task OnAfterRenderAsync(bool firstRender) {
-      await _jsRuntime.InvokeVoidAsync("highlightSnippet");
+      await JsRuntime.InvokeVoidAsync("highlightSnippet");
    }
 
 }

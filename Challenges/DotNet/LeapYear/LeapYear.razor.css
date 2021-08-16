@@ -1,0 +1,12 @@
+.button-card {
+    width: fit-content;
+    color: var(--link);
+    background-color: var(--background-color);
+    border: 1px solid var(--link);
+}
+
+.button-card:hover {
+    background-color: var(--link);
+    border: 1px solid var(--link);
+    color: var(--background-color);
+}
