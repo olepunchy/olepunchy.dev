@@ -5,28 +5,35 @@
 
    <ChallengeImage Image="img/calendar-alt-duotone.svg"></ChallengeImage>
    
+   <div class="row text-center mt-4">
+      <p>Given a year between 1 and 9999, check to see if it a <a href="https://en.wikipedia.org/wiki/Leap_year">Leap year</a></p>
+   </div>
+   
    <CodeBlock>
       @Code
    </CodeBlock>
   
-   <div class="col-4 mx-4 border-1">
-      
-     <EditForm Model="@Model" OnValidSubmit="@OnValidSubmit" OnInvalidSubmit="@OnInvalidSubmit">
+   <div class="col-4 my-4 mx-4 p-4 punchy-violet-border-bg">
+      <EditForm Model="@Model" OnValidSubmit="@OnValidSubmit" OnInvalidSubmit="@OnInvalidSubmit">
          <DataAnnotationsValidator/>
 
-        <div class="mb-3">
-           <label for="@Model.Year" class="form-label">Year:</label>
-           <InputNumber @bind-Value="Model.Year" Id="Year" Style="width: 6rem;" />
-           <div class="error-message">
-              <ValidationMessage For="@(() => Model.Year)" />
-           </div>
-           
-           @Result
-           
-           <!-- TODO: Button should only be active for a valid form -->
-           <button class="btn button-card mt-4" type="submit">Leap Year?</button>
-        </div>
-     </EditForm>
+         <div class="mb-3">
+            <label for="@Model.Year" class="form-label">Year to check:</label>
+            <InputNumber @bind-Value="Model.Year" Id="Year" Style="width: 6rem;"/>
+            <div class="error-message">
+               <ValidationMessage For="@(() => Model.Year)"/>
+            </div>
+
+            @Result
+
+            <button class="btn button-card mt-4" type="submit">Leap Year?</button>
+         </div>
+      </EditForm>
+   </div>
+   
+   
+   <div class="row text-center justify-content-center">
+      <a class="btn button-card" href="https://github.com/olepunchy/csharp-challenges/tree/main/LeapYear" target="_blank">View on Github</a>
    </div>
    
    <ChallengeFooter />
@@ -69,12 +76,13 @@ public static class Leap {
 
       Result = result ? (MarkupString)$"<div class='teal mt-2'>Bingo, {Model.Year} is a leap year!</div>" 
          : (MarkupString)$"<div class='orange mt-2'>Nope, {Model.Year} is not a leap year</div>";
-      
-      ShouldRender();
+     
+      StateHasChanged();
    }
 
    private void OnInvalidSubmit() {
       Result = (MarkupString)"<div></div>";
+      StateHasChanged();
       ShouldRender();
    }
 
