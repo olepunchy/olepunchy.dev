@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
 
+/*@font-face {*/
+/*  font-family: 'MesloLGS NF';*/
+/*  src: local("fonts/meslo-lgs-regular.ttf"); */
+/*}*/
+
 :root {
   /***********************************************************
    *                       Doom One Colors
@@ -90,6 +95,7 @@ body::-webkit-scrollbar-thumb {
   margin: 0;
   box-sizing: border-box;
   font-family: "JetBrains Mono", monospace;
+  /*font-family: "MesloLGS NF", monospace;*/
 }
 
 html,

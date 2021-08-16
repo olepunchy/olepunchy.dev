@@ -21,8 +21,4 @@
     <None Include="wwwroot\md\003.md" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Challenges\DotNet\FizzBuzz" />
-  </ItemGroup>
-
 </Project>

@@ -1,0 +1,37 @@
+@page "/challenges/leapyear"
+
+<Container>
+   <ChallengeHeader Title="Leap Year" />
+
+      <CodeBlock>
+         @Code
+      </CodeBlock>
+   
+   <ChallengeFooter />
+</Container>
+
+@code {
+
+   [Parameter] public string Code { get; set; }
+
+   protected override void OnInitialized() {
+      Code = @"
+public static class Leap {
+   public static bool IsLeapYear(int year) {
+      // Leap:
+      // A year is a leap year if it meets these tests:
+      // - evenly divisible by 4
+      // - not evenly divisible by 100
+      // - unless also evenly divisible by 400
+
+      // Clamp the year range to something we can work with.
+      if (year < 1 || year > 9999) {
+            return false;
+      }
+
+      return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
+   }
+}";
+   }
+
+}
