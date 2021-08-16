@@ -10,7 +10,7 @@ services:
     registry: olepunchy
     registry_type: DOCKER_HUB
     repository: olepunchy.io
-    tag: 1.0.1
+    tag: 1.0.2
   instance_count: 1
   instance_size_slug: basic-xxs
   name: olepunchy-io
