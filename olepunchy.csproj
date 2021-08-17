@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css" />
-    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap\bootstrap.min.css.map" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MarkDig" Version="0.25.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
@@ -20,9 +15,9 @@
     <None Include="wwwroot\md\002.md" />
   </ItemGroup>
 
-<!--  <ItemGroup>-->
-<!--    <Content Include="Challenges\Components\ChallengeCard.razor.css" />-->
-<!--    <Content Include="Challenges\Components\ChallengeImage.razor.css" />-->
-<!--  </ItemGroup>-->
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="About\Components\Icons\Csharp.razor" />
+    <_ContentIncludedByDefault Remove="About\Components\Icons\Dotnet.razor" />
+  </ItemGroup>
 
 </Project>

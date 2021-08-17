@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace olepunchy.Components
+namespace olepunchy.About.Components
 {
     public partial class Tile : ComponentBase {
         [Parameter] public string Image { get; set; }
