@@ -1,4 +1,5 @@
 @using olepunchy.Challenges.Components
+@using System.Text.RegularExpressions
 @page "/challenges/tacocat"
 
 <ChallengeContainer>
@@ -9,7 +10,8 @@
     </div>
     
     <div class="row text-center mt-4">
-        <p>Check to see if a given string is a <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank">Palindrome</a></p>
+        <p>Check to see if a given string is a <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank">Palindrome</a>.
+            <br/>Words, phrases or sentences that spell the same words forwards and backwards.</p>
     </div>
     
     <CodeBlock>
@@ -17,24 +19,44 @@
     </CodeBlock>
     
       <div class="col-4 my-4 mx-4 p-4 punchy-violet-border-bg">
-         <EditForm Model="@Model" OnValidSubmit="@OnValidSubmit">
-            <DataAnnotationsValidator/>
+          <EditForm Model="@Model" OnValidSubmit="@OnValidSubmit" OnInvalidSubmit="@OnInvalidSubmit">
+              <DataAnnotationsValidator/>
    
-            <div class="mb-3">
-                <label for="@Model.Input" class="form-label">String to check:</label>
-                <br/>
-               <InputText @bind-Value="Model.Input" Id="Year" Style="width: 20rem;"/>
-               <div class="error-message">
-                  <ValidationMessage For="@(() => Model.Input)"/>
-               </div>
+              <div class="mb-3">
+                  <label for="@Model.Input" class="form-label">String to check:</label>
+                  <br/>
+                  <InputText @bind-Value="Model.Input" @onfocusout="@(() => Result = (MarkupString)string.Empty)" Id="Input" Style="width: 20rem;"/>
+                  <div class="small red mt-2">
+                      <ValidationMessage For="@(() => Model.Input)"/>
+                  </div>
    
-               @Result
+                  @Result
    
-               <button class="btn button-card mt-4" type="submit">Palindrome?</button>
-            </div>
-         </EditForm>
+                  <button class="btn button-card mt-4" type="submit">Palindrome?</button>
+              </div>
+          </EditForm>
+         
+          <div class="row">
+              <h6 class="mt-4 py-1 teal">
+                  Palindrome Examples:
+              </h6>
+              <p>
+                  Otto
+                  <br/>
+                  Taco Cat
+                  <br/>
+                  A dog! A plan, a canal: pagoda.
+                  <br/>
+                  A Santa at Nasa.
+              </p>
+              
+          </div>
       </div>
-       
+      
+      
+     <div class="row text-center justify-content-center">
+        <a class="btn button-card" href="https://github.com/olepunchy/csharp-challenges/tree/main/TacoCat" target="_blank">View on Github</a>
+     </div>
    
     <ChallengeFooter />
 </ChallengeContainer>
@@ -42,7 +64,7 @@
 
 @code {
     [Parameter] public string Code { get; set; }
-    public PalindromeModel Model = new();
+    private PalindromeModel Model = new();
     private MarkupString Result { get; set; }
 
     protected override void OnInitialized() {
@@ -53,7 +75,7 @@ public static class TacoCat {
 
     public static bool IsPalindrome(string input) {
 
-        const string regex = '[^a-zA-Z0-9]+';
+        const string regex = '[^a-zA-Z]+';
         string reversed = string.Empty;
 
         for (int index = input.Length - 1; index >= 0; index--) {
@@ -63,12 +85,49 @@ public static class TacoCat {
         reversed = Regex.Replace(reversed.ToLower(), regex, '');
         input = Regex.Replace(input.ToLower(), regex, '');
 
+        if (reversed.Equals(string.Empty) || input.Equals(string.Empty)) {
+            return false;
+        }
+
         return reversed.Equals(input);
     }
-}";
+}
+";
     }
 
     private void OnValidSubmit() {
+        // Clear out recently used properties
+        Model.IsPalindrome = false;
+        Model.Message = string.Empty;
+        Model.Reversed = string.Empty;
+        
+        const string regex = "[^a-zA-Z]+";
+
+        for (int index = Model.Input.Length - 1; index >= 0; index--) {
+            Model.Reversed += Model.Input[index];
+        }
+
+        string reversed = Regex.Replace(Model.Reversed.ToLower(), regex, "");
+        string input = Regex.Replace(Model.Input.ToLower(), regex, "");
+
+        // Handle cases like user entering -- which is technically allowed but is not a Palindrome
+        if (reversed.Equals(string.Empty) || input.Equals(string.Empty)) {
+            Model.Message = $"<div class='small red mt-2'>Please try a string with letters.</div>";
+            Result = (MarkupString)Model.Message;
+            StateHasChanged();
+        } else {
+            Model.IsPalindrome = reversed.Equals(input);
+            Model.Message = Model.IsPalindrome ? $"<div class='teal mt-2'>Bingo, {Model.Input} is a palindrome!</div>" 
+                : $"<div class='orange mt-2'>Nope, {Model.Input} is not a palindrome</div>";
+            Result = (MarkupString)Model.Message;
+            
+            StateHasChanged();
+        }
+    }
+
+    private void OnInvalidSubmit() {
+        Result = (MarkupString)"<div></div>";
+        StateHasChanged();
     }
 
 }
