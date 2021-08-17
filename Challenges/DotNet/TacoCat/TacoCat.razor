@@ -1,0 +1,26 @@
+@using olepunchy.Challenges.Components
+@page "/challenges/tacocat"
+
+<ChallengeContainer>
+    <ChallengeHeader Title="TacoCat" />
+    
+    <ChallengeImage Image="img/taco-duotone.svg"></ChallengeImage>
+    
+    <div class="row text-center mt-4">
+        <p>Check to see if a given string is a <a href="https://en.wikipedia.org/wiki/Palindrome" target="_blank">Palindrome</a></p>
+    </div>
+    
+    <CodeBlock>
+       @Code 
+    </CodeBlock>
+</ChallengeContainer>
+
+
+@code {
+    [Parameter] public string Code { get; set; }
+
+    protected override void OnInitialized() {
+        // Set the code string here
+    }
+
+}

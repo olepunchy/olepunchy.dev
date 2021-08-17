@@ -1,0 +1,17 @@
+<div class="challenge-card punchy-violet-border-bg m-4 shadow">
+    <div class="challenge-card-top text-center">
+        <img class="challenge-card-img" src="@Image" alt="C-Sharp">
+    </div>
+    <div class="challenge-card-body text-center">
+        <h5>@Title</h5>
+        <p class="card-text">@About</p>
+        <a href="@Url" class="btn button-card">View Solution</a>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string Image { get; set; }
+    [Parameter] public string About { get; set; }
+    [Parameter] public string Url { get; set; }
+}

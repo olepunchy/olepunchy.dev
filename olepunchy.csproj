@@ -21,4 +21,9 @@
     <None Include="wwwroot\md\003.md" />
   </ItemGroup>
 
+<!--  <ItemGroup>-->
+<!--    <Content Include="Challenges\Components\ChallengeCard.razor.css" />-->
+<!--    <Content Include="Challenges\Components\ChallengeImage.razor.css" />-->
+<!--  </ItemGroup>-->
+
 </Project>
