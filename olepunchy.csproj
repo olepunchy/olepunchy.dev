@@ -18,7 +18,6 @@
   <ItemGroup>
     <None Include="wwwroot\md\001.md" />
     <None Include="wwwroot\md\002.md" />
-    <None Include="wwwroot\md\003.md" />
   </ItemGroup>
 
 <!--  <ItemGroup>-->
