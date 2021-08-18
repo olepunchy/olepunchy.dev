@@ -80,6 +80,10 @@
   color: var(--red);
 }
 
+.text {
+  color: var(--foreground-color);
+}
+
 /*************************************************
  * Scrollbar Customization
  *************************************************/
