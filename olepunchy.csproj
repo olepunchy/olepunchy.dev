@@ -15,9 +15,5 @@
     <None Include="wwwroot\md\002.md" />
   </ItemGroup>
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="About\Components\Icons\Csharp.razor" />
-    <_ContentIncludedByDefault Remove="About\Components\Icons\Dotnet.razor" />
-  </ItemGroup>
 
 </Project>

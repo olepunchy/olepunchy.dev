@@ -1,0 +1,117 @@
+@using olepunchy.Challenges.Components
+@using System.Text.RegularExpressions
+@page "/challenges/hamming"
+
+<ChallengeContainer>
+    <ChallengeHeader Title="Hamming" />
+    
+    <div class="col text-center mt-4">
+        <img src="img/dna-duotone.svg" alt=""> 
+    </div>
+    
+    <div class="row text-center mt-4">
+        <p>Given two strings of equal length, calculate the <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank" rel="noopener">Hamming Distance</a>, or number of differences between them.</p>
+        <br/>
+        <p>For example the strings <span class="text-muted">CATCGTA</span><span class="teal">A</span><span class="text-muted">TGA</span> and <span class="text-muted">CATCGTA</span><span class="teal">T</span><span class="text-muted">TGA</span> have a hamming distance of 1.</p>
+    </div>
+    
+    
+    <CodeBlock>
+        @Code 
+    </CodeBlock>
+    
+      <div class="col-4 my-4 mx-4 p-4 punchy-violet-border-bg">
+          <EditForm Model="@Model" OnValidSubmit="@OnValidSubmit" OnInvalidSubmit="@OnInvalidSubmit">
+              <DataAnnotationsValidator/>
+          
+              <div class="mb-3">
+                  <label for="@Model.FirstString" class="form-label">First String:</label>
+                  <br/>
+                  <InputText @bind-Value="Model.FirstString" @onfocusout="@(() => Result = (MarkupString)string.Empty)" Id="FirstString" Style="width: 20rem;"/>
+                  <div class="small red mt-2">
+                      <ValidationMessage For="@(() => Model.FirstString)"/>
+                  </div>
+                  
+                  <label for="@Model.SecondString" class="form-label">Second String:</label>
+                  <br/>
+                  <InputText @bind-Value="Model.SecondString" @onfocusout="@(() => Result = (MarkupString)string.Empty)" Id="SecondString" Style="width: 20rem;"/>
+                  <div class="small red mt-2">
+                      <ValidationMessage For="@(() => Model.SecondString)"/>
+                  </div>
+          
+                  @Result
+          
+                  <button class="btn button-card mt-4" type="submit">Hamming Distance</button>
+              </div>
+          </EditForm>
+         
+      </div>
+      
+      
+     <div class="row text-center justify-content-center">
+        <a class="btn button-card" href="https://github.com/olepunchy/csharp-challenges/tree/main/TacoCat" target="_blank">View on Github</a>
+     </div>
+   
+    <ChallengeFooter />
+</ChallengeContainer>
+
+
+@code {
+    [Parameter] public string Code { get; set; }
+    private HammingModel Model = new();
+    private MarkupString Result { get; set; }
+
+    protected override void OnInitialized() {
+        Code = @" 
+public static class Hamming {
+    public static int Distance(string firstStrand, string secondStrand) {
+
+        if (firstStrand.Length != secondStrand.Length) {
+            throw new System.ArgumentException();
+        }
+
+        int differences = 0;
+
+        for (int index = 0; index <= firstStrand.Length - 1; index++) {
+            if (firstStrand[index] != secondStrand[index]) {
+                differences++;
+            }
+        }
+
+        return differences;
+    }
+}
+";
+    }
+
+    private void OnValidSubmit() {
+
+        if (Model.FirstString.Length != Model.SecondString.Length) {
+            Result = (MarkupString)"<div class='red'>First and Second string should be same length</div>";
+            StateHasChanged();
+        } else {
+            int differences = 0;
+            string phrase = string.Empty;
+
+            for (int index = 0; index <= Model.FirstString.Length - 1; index++) {
+                if (Model.FirstString[index] != Model.SecondString[index]) {
+                    differences++;
+                    phrase += $"<span class='teal'>{Model.FirstString[index]}</span>";
+                } else {
+                    phrase += Model.FirstString[index];
+                }
+            }
+
+            string result = $"<div class='mt-4'>Hamming Distance = {differences}<br/><br/>{phrase}</div>";
+
+            Result = (MarkupString)result;
+            StateHasChanged();
+        }
+    }
+
+    private void OnInvalidSubmit() {
+        Result = (MarkupString)"<div></div>";
+        StateHasChanged();
+    }
+
+}

@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");*/
 
-/*@font-face {*/
-/*  font-family: 'MesloLGS NF';*/
-/*  src: local("fonts/meslo-lgs-regular.ttf"); */
-/*}*/
+@font-face {
+  font-family: 'MesloLGS NF';
+  src: local("fonts/meslo-lgs-regular.ttf"); 
+}
 
 :root {
   /***********************************************************
@@ -106,8 +106,8 @@ body::-webkit-scrollbar-thumb {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "JetBrains Mono", monospace;
-  /*font-family: "MesloLGS NF", monospace;*/
+  /*font-family: "JetBrains Mono", monospace;*/
+  font-family: "MesloLGS NF", monospace;
 }
 
 html,
@@ -132,12 +132,31 @@ a:hover {
   text-decoration: none;
 }
 
-h5 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--violet);
 }
 
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
 h3 {
-  color: var(--violet);
+  font-size: 1rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 0.75rem;
 }
 
 main {
@@ -285,6 +304,19 @@ main {
   color: var(--background-color);
   border: 1px solid var(--foreground-color);
   transition: var(--transition-speed) ease;
+}
+
+.button-card {
+  width: fit-content;
+  color: var(--link);
+  background-color: var(--background-color);
+  border: 1px solid var(--link);
+}
+
+.button-card:hover {
+  background-color: var(--link);
+  border: 1px solid var(--link);
+  color: var(--background-color);
 }
 
 /*************************************************
