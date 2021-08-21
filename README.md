@@ -1,7 +1,6 @@
-# olepunchy.io
+# olepunchy.dev
+
 olepunchy's personal portofilio site and blog written in C# and Blazor Server.
-
-
 
 #### License
 

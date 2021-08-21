@@ -1,10 +1,10 @@
-#+title: olepunchy.io Project Notes
+#+title: olepunchy.dev Project Notes
 #+author: Jeremy Novak
 #+license: BSD 3-Clause
 #+target: Docker
 #+date: <2021-08-09 Mon>
 
-* Project Notes for olepunchy.io
+* Project Notes for olepunchy.dev
 
 ** Description:
 
