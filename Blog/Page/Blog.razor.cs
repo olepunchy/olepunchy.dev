@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using olepunchy.Blog.Model;
 
 namespace olepunchy.Blog.Page {
     public partial class Blog : ComponentBase {

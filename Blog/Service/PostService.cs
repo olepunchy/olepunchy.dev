@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using olepunchy.Blog.Model;
 
 namespace olepunchy.Blog {
     public class PostService {
@@ -26,9 +27,10 @@ namespace olepunchy.Blog {
             if (Posts != null) {
                 foreach (var post in Posts) {
                     post.Tags = string.Join<string>(",", post.Keywords);
-                    GetMarkdownFromFile(post);
+                    // GetMarkdownFromFile(post);
                     // post.Markdown = GetMarkdownFromUrl(client, post.File);
-                    GetCreatedDate(post);
+                    // GetCreatedDate(post);
+                    // post.Created = post.Created;
                 }
             }
 
@@ -39,9 +41,9 @@ namespace olepunchy.Blog {
             return Posts.FirstOrDefault(s => s.Slug == slug);
         }
 
-        private void GetMarkdownFromFile(PostModel post) {
-            post.Markdown = File.ReadAllText(post.File);
-        }
+        // private void GetMarkdownFromFile(PostModel post) {
+        //     post.Markdown = File.ReadAllText(post.File);
+        // }
         
         // private string GetMarkdownFromUrl(HttpClient client, string url) {
         //     var text = client.GetStringAsync(url);
@@ -49,8 +51,8 @@ namespace olepunchy.Blog {
         //     return text.Result;
         // }
 
-         private void GetCreatedDate(PostModel post) {
-             post.Created = File.GetCreationTime(post.File);
-         }
+         // private void GetCreatedDate(PostModel post) {
+             // post.Created = File.GetCreationTime(post.File);
+         // }
     }
 }

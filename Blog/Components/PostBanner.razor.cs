@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Components;
+using olepunchy.Blog.Model;
 
 namespace olepunchy.Blog.Components {
     public partial class PostBanner : ComponentBase {

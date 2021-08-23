@@ -7,32 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="Added the About.razor page back to the project.">
-      <change afterPath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blog/Components/PostHeader.razor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+    <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="Refactoring blog, going with static Blazor pages and components">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/About/About.razor" beforeDir="false" afterPath="$PROJECT_DIR$/About/About.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Blog.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Blog.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Blog.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/BlogSearch.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/BlogSearch.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/BlogSearch.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/BlogSearch.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostBanner.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostBanner.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostBanner.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostFooter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostFooter.razor.css" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/PostModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Service/PostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostView.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostView.razor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/PostView.razor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Model/PostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/PostModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Service/PostService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/olepunchy.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/olepunchy.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/data/blog-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/data/blog-data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/md/001.md" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/md/001.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +127,7 @@
       <updated>1628346664714</updated>
       <workItem from="1628346681990" duration="19672000" />
       <workItem from="1628427357202" duration="1022000" />
-      <workItem from="1629727000293" duration="22669000" />
+      <workItem from="1629727000293" duration="23890000" />
     </task>
     <task id="LOCAL-00001" summary="Added the About.razor page back to the project.">
       <created>1628427940892</created>
@@ -150,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1628427940892</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Refactoring blog, going with static Blazor pages and components">
+      <created>1629755085221</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629755085221</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,6 +450,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added the About.razor page back to the project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the About.razor page back to the project." />
+    <MESSAGE value="Refactoring blog, going with static Blazor pages and components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring blog, going with static Blazor pages and components" />
   </component>
 </project>
