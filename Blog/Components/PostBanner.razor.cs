@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 
-namespace olepunchy.Blog {
+namespace olepunchy.Blog.Components {
     public partial class PostBanner : ComponentBase {
         
         

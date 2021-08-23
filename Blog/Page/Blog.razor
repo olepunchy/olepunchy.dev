@@ -4,23 +4,25 @@
    @* TODO: Restore Search when working *@ 
    @* <BlogSearch/> *@
    
-   @* @if (_posts == null) { *@
-   <div class="row text-center mt-4">
-        <p>Jeremy is working on some fresh posts, check back soon(&trade;)...</p>
-   </div>
-   @* } *@
+   @if (_posts == null) {
+       <div class="row text-center mt-4">
+            <p>Jeremy is working on some fresh posts, check back soon(&trade;)...</p>
+       </div>
+   }
 
-   @*
    @if (_posts == null) {
         <p>Loading posts...</p>
-    }
-    else {
+    } else {
         <div class="grid">
             @foreach (var post in _posts) {
                 <PostBanner PostModel="post" OnSelected="SelectedPost"/>
             }
         </div>
-    }*@
+       
+       <div>
+       </div>
+           
+    }
 
     <SocialIcons/>
 </Container>

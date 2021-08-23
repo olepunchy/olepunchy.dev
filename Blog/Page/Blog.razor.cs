@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
-using olepunchy.Services;
 
-namespace olepunchy.Blog {
+namespace olepunchy.Blog.Page {
     public partial class Blog : ComponentBase {
 
         [Inject] private NavigationManager NavigationManager { get; set; }
@@ -17,6 +16,7 @@ namespace olepunchy.Blog {
         protected override async Task OnInitializedAsync() {
             try {
                 _posts = await PostService.LoadPostDataFromJson();
+                // _posts += GettingStarted;
             } catch (HttpRequestException exception) {
                 Console.WriteLine($"There was an exception loading data: {exception.Message}");
             }

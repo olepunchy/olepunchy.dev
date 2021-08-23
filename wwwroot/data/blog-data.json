@@ -5,16 +5,7 @@
     "image": "img/blazor.svg",
     "title": "Getting Started with Blazor on Linux",
     "slug": "getting_started_with_blazor_on_linux",
-    "keywords": ["blazor", "linux"],
-    "author": "Jeremy Novak"
-  },
-  {
-    "id": 2,
-    "file": "wwwroot/md/002.md",
-    "image": "img/docker.svg",
-    "title": "Deploying a Blazor Server app to Docker",
-    "slug": "deploying_a_blazor_server_app_to_docker",
-    "keywords": ["blazor", "docker"],
+    "keywords": ["blazor", "linux", "dotnet"],
     "author": "Jeremy Novak"
   }
 ]

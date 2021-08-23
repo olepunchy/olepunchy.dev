@@ -1,0 +1,22 @@
+@page "/blog/blazoronlinux"
+@page "/blog/blazor_on_linux"
+
+<Container>
+    <PostHeader Post="@Post" />
+    
+    <PostFooter Post="@Post" />
+</Container>
+
+@code {
+    [Parameter] public PostModel Post { get; set; }
+
+    protected override void OnInitialized() {
+        Post = new PostModel() {
+            Author = "Jeremy Novak",
+            Created = DateTime.Parse("08-21-21"),
+            Tags = "dotnet, linux, blazor",
+            Image = "img/blazor.svg"
+        };
+    }
+
+}
