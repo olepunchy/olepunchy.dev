@@ -1,3 +1,6 @@
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
 domains:
   - domain: olepunchy.dev
     type: PRIMARY
@@ -10,7 +13,7 @@ services:
       registry: olepunchy
       registry_type: DOCKER_HUB
       repository: olepunchy.dev
-      tag: 1.0.6
+      tag: 1.0.7
     instance_count: 1
     instance_size_slug: basic-xxs
     name: olepunchy-dev
