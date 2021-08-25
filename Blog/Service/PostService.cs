@@ -21,7 +21,8 @@ namespace olepunchy.Blog {
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             HttpClient client = new HttpClient(clientHandler);
                 
-            Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://olepunchy.dev/data/blog-data.json");
+            // Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://olepunchy.dev/data/blog-data.json");
+            Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://localhost:5001/data/blog-data.json");
             // Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://github.com/olepunchy/blog/blob/main/blog-data.json");
 
             if (Posts != null) {
@@ -39,6 +40,12 @@ namespace olepunchy.Blog {
 
         public PostModel LoadPostFromSlug(string slug) {
             return Posts.FirstOrDefault(s => s.Slug == slug);
+        }
+
+        public PostModel LoadPostWithId(int id) {
+            var p = Posts.FirstOrDefault(x => x.Id == id);
+
+            return p;
         }
 
         // private void GetMarkdownFromFile(PostModel post) {

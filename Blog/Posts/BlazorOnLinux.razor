@@ -1,15 +1,513 @@
-@page "/blog/blazoronlinux"
+@using olepunchy.Blog.Components
 @page "/blog/blazor_on_linux"
-@using olepunchy.Blog.Model
 
 <Container>
-    <PostHeader Post="@Post" />
-   
-    <h3>Hello</h3> 
-    
-    <PostFooter Post="@Post" />
-</Container>
+        <PostHeader Post="@Post" />
 
-@code {
-    [Parameter] public PostModel Post { get; set; }
+        <div class="row">
+            <h1 class="text-center">@Post.Title</h1>
+        </div>
+
+        <div class="row my-4">
+            <div class="row text-center justify-content-center">
+                <h2>Not your uncle's .Net Framework</h2>
+                <img class="mt-2" style="width: 200px;" src="gif/90s-business-man.gif" alt="90s Business Man">
+                <p class="small teal"><em>&quot;How are those TPS reports coming along, John?&quot;</em></p>
+            </div>
+
+            <div class="row my-4">
+                <h3>.Net 5 and beyond</h3>
+                <p class="small">
+                   With <BlogLink Text=".Net 5" Url="https://github.com/dotnet" /> and soon&trade; .Net 6, Microsoft
+                   has done something many of us from the Linux world never thought would happen ten years ago.
+                    <br/><br/>
+                    A truly cross-platform <span class="teal">(Windows, macOS, Linux, iOS, Android)</span>
+                    multi-purpose <span class="teal">(Desktop, Mobile, Several Web Technologies, Microservices, Machine Learning, Internet of Things, and more...)</span>
+                    framework with a battle tested performant language (<BlogLink Text="C#" Url="https://github.com/dotnet/csharplang" />)
+                    all developed as Open Source.
+                </p>
+                <h3>Blazor</h3>
+                <p class="small">
+                    This post is about <BlogLink Text="Blazor" Url="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" />
+                    which comes in two basic configurations currently. Blazor Server which runs our code on the server
+                    and communicates with the client via <BlogLink Text="SignalR" Url="https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-5.0" />,
+                    and Blazor Web Assembly in which case the client downloads our code to the browser and runs it locally.
+                    <br/><br/>
+                    If you have experience with Javascript frameworks like <BlogLink Text="React" Url="https://reactjs.org/" />
+                    or <BlogLink Text="VueJS" Url="https://vuejs.org/" />, then you will probably find
+                    that Blazor is functionally similar or at least familiar.
+                </p>
+                <p class="small">
+                    We'll get into that here shortly with a quick demo, but first let's make sure you get off to
+                    a good start with .Net on Linux.
+                </p>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">Getting .Net for Linux</h2>
+            <p class="small">Getting the latest stable <a href="https://github.com/dotnet" target="_blank" rel="noopener">
+                .Net</a> should be a straight forward process for users running
+                a typical Distribution of Linux. For everyone else there is a
+                scripted install process that seems promising.</p>
+
+            <h3>Alpine, CentOS, Debian, Fedora, openSUSE, Red Hat and Ubuntu</h3>
+            <p class="small">
+                In the <BlogLink Text="official installation documentation" Url="https://docs.microsoft.com/en-us/dotnet/core/install/linux" />,
+                find the section for <span class="teal">Install .Net SDK &lt;YOUR_DISTRIBUTION&gt;</span>.
+                Read the <span class="teal">Supported Distributions</span> section
+                at the top to ensure your version is supported. Then follow the instructions
+                in the <span class="teal">Install the SDK</span> section of the page.
+                <br/><br/>
+                The instructions should work without issue for those running one of
+                the derivative Distributions, like <BlogLink Text="Linux Mint" Url="https://linuxmint.com" />
+            </p>
+
+            <h3>Arch Linux</h3>
+            <p class="small">
+                <BlogLink Text="Arch Linux" Url="https://archlinux.org" /> users and their
+                    derivatives (e.g. <BlogLink Text="Manjaro" Url="https://manjaro.org" />)
+                can install the <span class="teal">dotnet-sdk</span> package from the
+                <BlogLink Text="Arch Package Respository" Url="https://archlinux.org/packages/?name=dotnet-sdk" />
+                    with <kbd>sudo pacman -S dotnet-sdk mono-msbuild libuv</kbd>
+            </p>
+
+            <h3>Void Linux</h3>
+            <p class="small">
+                I did have the chance to test on <BlogLink Text="Void Linux" Url="https://voidlinux.org" />
+                using the <BlogLink Text="Scripted Install" Url="https://docs.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install" />
+                and it seemed to work fine. If you are running a Distribution that doesn't
+                have official packages this is certainly worth a try.
+
+            </p>
+
+            <h3>FreeBSD & OpenBSD</h3>
+            <p class="small">
+                There doesn't appear to be any activity from either Microsoft or the
+                respective BSD Ports Teams to bring <BlogLink Text=".Net 5" Url="https://github.com/dotnet" />
+                to BSD-land.
+                <br/><br/>
+                <BlogLink Text="Jason Pugsley" Url="https://github.com/jasonpugsley" />
+                has some interesting looking <BlogLink Text="instructions" Url="https://github.com/jasonpugsley/installer/wiki/.Net-Core-3.0.0-for-FreeBSD" />
+                on getting .Net working under FreeBSD. This might be worth a try if
+                you care a little more about runing FreeBSD than having official packages
+                for .Net.
+            </p>
+
+            <h3>Unsolicited Advice</h3>
+            <p class="small">
+                I tend to keep my opinions to myself on things like which Linux Distribution to use,
+                but will make an exception here. If you are doing <em>paid</em> .Net development
+                for clients or running a business on your software in my opinion you want to
+                stick to a Distribution that gets a lot of attention from Microsoft.
+                <BlogLink Text="Alpine Linux" Url="https://www.alpinelinux.org" />,
+                <BlogLink Text="Debian" Url="https://www.debian.org" />,
+                 or <BlogLink Text="Red Hat" Url="https://redhat.com" /> and close derivative Distributions
+                are reasonable bets for production code where money is on the line.
+            </p>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">Arch Linux .Net Core Wiki</h2>
+            <p class="small">
+                The <BlogLink Text="Arch Linux .Net Core Wiki" Url="https://wiki.archlinux.org/title/.Net_Core" />
+                page is a good resource for .Net developers on Linux with some handy hints.
+                I recommend you read and bookmark this page.
+            </p>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">Omnisharp-Roslyn</h2>
+            <p class="small">
+                To get the best experience developing .Net on Linux you will need
+                a <BlogLink Text="Language Server" Url="https://microsoft.github.io/language-server-protocol/" />
+                for C# and .Net. The main option is <BlogLink Text="Omnisharp-Roslyn" Url="https://github.com/OmniSharp/omnisharp-roslyn" />.
+                <br/><br/>
+                Arch Linux users will want to ensure they have installed <span class="teal">mono-msbuild</span>
+                and <span class="teal">libuv</span> in addition to <span class="teal">dotnet-sdk</span>.
+                <br/><br/>
+                All Linux users will want to ensure they have <span class="teal">libuv</span>
+                installed for the HTTP interface. This essentially lets your editor communicate with the
+                language server and is recommended. Check your distribution documentation on how
+                to see if packages are installed if unsure.
+            </p>
+            <h3>Getting Omnisharp-Roslyn</h3>
+            <p class="small">
+                For editors like VIM, Neovim, Emacs and Visual Studio Code, the install of
+                Omnisharp-Roslyn will usually be taken care of by editor extensions or bundles
+                for the C# language.
+                <br/><br/>
+                Consult the documentation, forums and subreddits for your favorite editor
+                for details on how to get a working install of these extensions if you are
+                unfamiliar with it or run into problems.
+                <br/><br/>
+                I personally use <BlogLink Text="Doom Emacs" Url="https://github.com/hlissner/doom-emacs" />
+                and all I had to do was uncomment <kbd>(csharp +lsp)</kbd> in my <kbd>~/.doom.d/init.el</kbd>
+                and then run <kbd>doom sync</kbd> to get Omnisharp working in my projects.
+            </p>
+            <h3>omnisharp.json</h3>
+            <p class="small">
+                You can place preferences like brace styles and others in a file called <kbd>~/.omnisharp/omnisharp.json</kbd>
+                <br/><br/>
+                See the <BlogLink Text="Configuration Options" Url="https://github.com/OmniSharp/omnisharp-roslyn/wiki/configuration-options" />
+                page and <BlogLink Text="these great blog posts" Url="https://www.strathweb.com/2020/02/hidden-features-of-omnisharp-and-c-extension-for-vs-code" />
+                for more information. You can also <BlogLink Text="view my personal omnisharp.json" Url="https://github.com/olepunchy/omnisharp-settings" />
+                for an example of using <BlogLink Text="One True Brace Style" Url="https://en.wikipedia.org/wiki/indentation_style" />.
+            </p>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">Razor Syntax Highlighting</h2>
+            <p class="small">
+                Your pages and components in a Blazor app use <BlogLink Text="Razor Syntax" Url="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor?view=aspnetcore-5.0" />,
+                which is a mix of HTML and C# in the same file similar in function to <BlogLink Text="JSX" Url="https://reactjs.org/docs/introducing-jsx.html" />.
+                A very simple example looks like the following.
+            </p>
+            <p>
+                <pre class="code">
+<code class="html">
+&#64;page "/"
+
+&lt;h1&gt;&#64;Greeting&lt;/h1&gt;
+
+&#64;code {
+    [Parameter] public string Greeting { get; set; }
+
+    protected override void OnInitialized() {
+        Greeting = "Hello, World!";
+    }
 }
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                As of the time of this blog post the two editors that I have found understand Razor
+                syntax the best are <BlogLink Text="Jetbrains Rider" Url="https://www.jetbrains.com/rider" />,
+                and <BlogLink Text="Visual Studio Code" Url="https://code.visualstudio.com" /> with the instructions
+                from <BlogLink Text="this page" Url="https://code.visualstudio.com/docs/languages/csharp" />.
+            </p>
+            <p class="small">
+                Another option is to create a separate <kbd>YourFile.razor.cs</kbd> file for each <kbd>YourFile.razor</kbd>
+                component or page. You can also create a separate <span class="teal">Scoped CSS</span> file for
+                any component or page by creating a file called <kbd>YourFile.razor.css</kbd>.
+            </p>
+            <p class="small">
+                As I mentioned previosuly my favorite editor is <BlogLink Text="Doom Emacs" Url="https://github.com/hlissner/doom-emacs" />
+                and the approach of having separate <kbd>FileName.razor</kbd>, <kbd>FileName.razor.cs</kbd>,
+                and <kbd>FileName.razor.css</kbd> files is what has worked the best for me.
+                <br/><br/>
+                The above simple page would look like this when separating out the files.
+            </p>
+            <p>
+                <span class="text-muted small">HelloWorld.razor</span>
+                <pre class="code">
+<code class="html">
+&#64;page "/"
+&lt;h1&gt;&#64;Greeting&lt;/h1&gt;
+</code>
+                </pre>
+
+                <span class="text-muted small">HelloWorld.razor.cs</span>
+                <pre class="code">
+<code class="csharp">
+using Microsoft.AspNetCore.Components;
+
+namespace BlazorServerDemo.Pages {
+    public partial class HelloWorld: ComponentBase {
+        [Parameter] public string Greeting { get; set; }
+
+        protected override void OnInitialized() {
+            Greeting = "Hello, World!";
+        }
+    }
+}
+</code>
+                </pre>
+
+                <span class="text-muted small">HelloWorld.razor.css</span>
+                <pre class="code">
+<code class="css">
+h1 {
+    color: cornflowerblue;
+}
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                I do keep a subscription/installation of Jetbrains Rider on my development machine because
+                in my opinion it's killer feature is the debugger. So when in doubt or on some more tricky bit
+                of Razor syntax I do sanity check it in Rider even if it compiles fine. You could accomplish
+                the same with Visual Studio Code if you are a VIM/Neovim/Emacs user or similar.
+            </p>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">First Blazor Server App</h2>
+            <p class="small">
+                Let's create our Blazor Server app using the <BlogLink Text="dotnet command line" Url="https://docs.microsoft.com/en-us/dotnet/core/tools/" />.
+                <br/><br/>
+                Open your favorite terminal and <kbd>cd</kbd> to a temporary project directory, then
+                create the project as follows.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+dotnet new blazorserver -o BlazorServerDemo
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                ASP.NET Core applications ship with a web server called <BlogLink Text="Kestrel" Url="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-5.0" />
+                which is what our application will launch when we start it up.
+                <br/><br/>
+                We will launch our Blazor Server app with the <kbd>watch</kbd> and <kbd>debug</kbd> flags. This will recompile
+                our code when we save a change and print debug messages to our terminal. In my opinion
+                this makes for a nicer development experience similar to what you get with <BlogLink Text="live-server" Url="https://www.npmjs.com/package/live-server" />.
+                <br/><br/>
+                Make sure you are in the project root folder (same level as <span class="teal">BlazorServerDemo.csproj</span>) and run the following.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+dotnet watch run debug
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                The default ports are <span class="teal">http://localhost:5000</span> and <span class="teal">https://localhost:5001</span>,
+                you can change these in the <span class="teal">Properties/launchSettings.json</span>
+                file if for some reason you need them to be something else.
+                <br/><br/>
+                All should have gone fine and you will see the following messages in your terminal.
+            </p>
+            <p>
+                <pre class="green">
+watch : Started
+Building...
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: https://localhost:5001
+info: Microsoft.Hosting.Lifetime[0]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /home/someone/path/to/project/BlazorServerDemo
+                </pre>
+            </p>
+            <p class="small">
+                Launch a browser and go to <span class="teal">https://localhost:5001</span>. This example project has some interesting
+                things going on, and the Counter page in particular should look familiar if you have
+                done some simple introductory React tutorials.
+            </p>
+            <p class="text-center my-2">
+                <img class="text-center" style="width:480px;" src="img/blazor-server-counter.png" alt="Blazor Server Demo">
+            </p>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">Learning Blazor</h2>
+            <p class="small">
+                The best free resource that I have found for learning Blazor is <BlogLink Text="Blazor University" Url="https://blazor-university.com/" />
+                by Peter Morris. It is seriosly good, and I can't recommend it enough for getting up and running
+                with Blazor quickly.
+                <br/><br/>
+                You will get a good grasp of how a Blazor project is laid out, what makes it work and how
+                to use components. So I have opted to send you there to instead of doing a simple and shallow
+                example beyond what the default <kbd>blazorserver</kbd> template already provides.
+            </p>
+        </div>
+
+        <div class="row my-4">
+            <h2 class="text-center">Bonus - Docker Deployment</h2>
+            <p class="small">
+                As a small bonus to wrap up this blog post, I wanted to show you how to create a <BlogLink Text="Docker" Url="https://docker.com" />
+                image from your BlazorServerDemo application. You will need an account on <BlogLink Text="Docker Hub" Url="https://hub.docker.com" />,
+                a free one will do fine. You will also need to have Docker installed on your development machine, and
+                can follow <BlogLink Text="these instructions" Url="https://docs.docker.com/engine/install/" /> to get started.
+            </p>
+            <p class="small">
+                Create a file called <span class="teal">Dockerfile</span> at the same level as the
+                <span class="teal">BlazorServerDemo.csproj</span> file in your project.
+                <br/><br/>
+                Let's see the entire thing first, and then I'll explain each section.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY BlazorServerDemo.csproj .
+RUN dotnet restore "BlazorServerDemo.csproj"
+COPY . .
+RUN dotnet build "BlazorServerDemo.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "BlazorServerDemo.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "BlazorServerDemo.dll"]
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                In the first section we are grabbing the ASP.NET 5 image from the
+                <BlogLink Text="Microsoft Container Registry" Url="https://github.com/microsoft/containerregistry" />
+                    and alias this as <span class="teal">build</span>.
+                    Next we set the working directory to <span class="teal">/app</span> and
+                    expose ports <span class="teal">80</span> and <span class="teal">443</span>.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Next we are grabbing the ASP.NET 5 SDK image from the MCR (Microsoft Container Registry)
+                so we can build the project. We alias this as <span class="teal">build</span>.
+                <br/><br/>
+                We copy everything in the project to the <span class="teal">/src</span> directory, and run
+                a <span class="teal">dotnet restore</span> to pull down the dependencies if there are any.
+                <br/><br/>
+                Finally we build the project with the Release flag sending the output to <span class="teal">/app/publish</span>.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY BlazorServerDemo.csproj .
+RUN dotnet restore "BlazorServerDemo.csproj"
+COPY . .
+RUN dotnet build "BlazorServerDemo.csproj" -c Release -o /app/build
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Publish the application with the Release flag to the /app/publish directory.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+FROM build AS publish
+RUN dotnet publish "BlazorServerDemo.csproj" -c Release -o /app/publish
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Set the entry point so that Docker knows how to run our app.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "BlazorServerDemo.dll"]
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                With that done, we can now build a Docker image of our project.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+docker build -t example/blazorserverdemo .
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Let's run the docker image to see the project running
+                from a docker container. This command will run the container as a detached
+                process where container port 80 is directed to localhost port 8080.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+docker run -dp 8080:80 example/blazorserverdemo
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                If you open a browser and go to this address (<span class="teal">http://localhost:8080</span>),
+                you should see your BlazorServerDemo project happily running from the container.
+            </p>
+            <p class="small">
+                At some point you may want to stop the container, and that part is done like so.
+                <br/><br/>
+                List the docker processes, and note the first 4 charcaters of the <span class="teal">CONTAINER_ID</span>
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+docker ps
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Stop the container by running <kbd>docker stop CONTAINER_ID</kbd>, where CONTAINER_ID is the first
+                four characters of the actual container id noted from the <kbd>docker ps</kbd> command above.
+                <br/><br/>
+                In my example below, the full CONTAINER_ID is actually 01db22e36114, but I just need to pass 01db.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+docker stop 01db
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Finally we are going to push our image up to <BlogLink Text="Docker Hub" Url="https://hub.docker.com" />.
+                You probably have a bit of set up to do here to authenticate, so please see the documentation on
+                <BlogLink Text="Docker Login" Url="https://docs.docker.com/engine/reference/commandline/login/" />.
+                Once that is sorted out, pushing your image to Docker Hub is very straight forward.
+                <br/><br/>
+                We will append a version tag to our image name to simulate one way we could keep the
+                different iterations of our docker image separate and identifiable.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+docker tag example/blazorserverdemo your-docker-user-name/blazorserverdemo:1.0.0
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Now push the image to Docker Hub.
+            </p>
+            <p>
+                <pre class="code">
+<code class="bash">
+docker push your-docker-user-name/blazorserverdemo:1.0.0
+</code>
+                </pre>
+            </p>
+            <p class="small">
+                Hopefully that was a piece of cake, and your image uploaded without any dramas.
+                If you ran into any problems the first place to look is to make sure you are properly
+                authenticated with Docker Hub from the links above.
+            </p>
+
+            <p class="small">
+                That concludes this blog post, and I hope you got something useful from it and hopefully had some fun too. -Jeremy
+            </p>
+        </div>
+
+        <PostFooter Post="@Post" />
+        <SocialIcons />
+</Container>

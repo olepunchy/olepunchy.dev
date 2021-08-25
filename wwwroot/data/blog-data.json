@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "url": "blog/blazor_on_linux",
+    "url": "/blog/blazor_on_linux",
     "image": "img/blazor.svg",
     "title": "Getting Started with Blazor on Linux",
     "slug": "blazor_on_linux",

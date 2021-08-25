@@ -7,17 +7,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="Refactoring blog, going with static Blazor pages and components">
+    <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Blog/Components/BlogLink.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Blog/Posts/3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/gif/90s-business-man.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/gif/dancing-ballmer.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wwwroot/img/blazor-server-counter.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Components/PostBanner.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Model/PostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/PostModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/Page/Blog.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blog/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Service/PostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/olepunchy.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/olepunchy.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wwwroot/data/blog-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/data/blog-data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +45,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/About/About.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Blog/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -70,7 +81,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35026944" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35066667" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -127,7 +138,9 @@
       <updated>1628346664714</updated>
       <workItem from="1628346681990" duration="19672000" />
       <workItem from="1628427357202" duration="1022000" />
-      <workItem from="1629727000293" duration="23890000" />
+      <workItem from="1629727000293" duration="23947000" />
+      <workItem from="1629756412461" duration="5870000" />
+      <workItem from="1629815062588" duration="3603000" />
     </task>
     <task id="LOCAL-00001" summary="Added the About.razor page back to the project.">
       <created>1628427940892</created>
@@ -143,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629755085221</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactoring blog to static components">
+      <created>1629756280505</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629756280505</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -451,6 +471,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added the About.razor page back to the project." />
     <MESSAGE value="Refactoring blog, going with static Blazor pages and components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring blog, going with static Blazor pages and components" />
+    <MESSAGE value="Refactoring blog to static components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring blog to static components" />
   </component>
 </project>

@@ -1,0 +1,22 @@
+@using olepunchy.Blog.Components
+@page "/blog/blazor_on_linux"
+
+<Container>
+        <PostHeader Post="@Post" />
+
+        <div class="row">
+            <h1 class="text-center">@Post.Title</h1>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+
+        <div class="row">
+
+            <img style="width:60px; height: 60px;" src="gif/90s-business-man.gif" alt="" />
+        </div>
+
+        <PostFooter Post="@Post" />
+</Container>

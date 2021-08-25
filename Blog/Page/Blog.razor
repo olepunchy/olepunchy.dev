@@ -1,3 +1,4 @@
+@using olepunchy.Blog.Components
 @page "/blog"
 
 <Container>
@@ -15,13 +16,9 @@
     } else {
         <div class="grid">
             @foreach (var post in _posts) {
-                <PostBanner PostModel="post" OnSelected="SelectedPost"/>
+                <PostBanner Post="post" OnSelected="SelectedPost"/>
             }
         </div>
-       
-       <div>
-       </div>
-           
     }
 
     <SocialIcons/>

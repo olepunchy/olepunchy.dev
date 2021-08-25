@@ -11,6 +11,6 @@ namespace olepunchy.Blog.Model {
         public string Tags { get; set; }
         public List<string> Keywords { get; set; }
         public string Author { get; set;  }
-        public DateTime Created { get; set; }
+        public string Created { get; set; }
     }
 }

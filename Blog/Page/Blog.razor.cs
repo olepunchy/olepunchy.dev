@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using olepunchy.Blog.Components;
 using olepunchy.Blog.Model;
 
 namespace olepunchy.Blog.Page {
@@ -17,15 +18,15 @@ namespace olepunchy.Blog.Page {
         protected override async Task OnInitializedAsync() {
             try {
                 _posts = await PostService.LoadPostDataFromJson();
-                // _posts += GettingStarted;
             } catch (HttpRequestException exception) {
                 Console.WriteLine($"There was an exception loading data: {exception.Message}");
             }
         }
 
-        private void SelectedPost(PostModel postModel) {
-            SelectedPostModel = postModel;
-            NavigationManager.NavigateTo($"/blog/{postModel.Slug}");
+        private void SelectedPost(PostModel post) {
+            SelectedPostModel = post;
+            // NavigationManager.NavigateTo($"/blog/{post.Slug}");
+            NavigationManager.NavigateTo($"{post.Url}");
         }
     }
 }
