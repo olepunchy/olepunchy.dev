@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 namespace olepunchy {
     public class Program {
         public static void Main(string[] args) {
-            // NOTE: Returns an IHost that builds and runs the application.
             CreateHostBuilder(args).Build().Run();
         }
 
