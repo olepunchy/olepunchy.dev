@@ -8,23 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c427374d-2465-49d7-8446-1343c2720fac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Blog/Components/BlogLink.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Blog/Posts/3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/gif/90s-business-man.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/gif/dancing-ballmer.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wwwroot/img/blazor-server-counter.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.olepunchy.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Components/PostBanner.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostBanner.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostFooter.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Components/PostHeader.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/PostModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/PostModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Page/Blog.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Page/Blog.razor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Service/PostService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Service/PostService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wwwroot/data/blog-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/data/blog-data.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +31,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Blog/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/About/About.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Blog/Posts/BlazorOnLinux.razor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Blog/Service/PostService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
