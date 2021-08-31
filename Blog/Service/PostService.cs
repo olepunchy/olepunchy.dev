@@ -1,6 +1,6 @@
-using System;
+// using System;
 using System.Collections.Generic;
-using System.IO;
+// using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -22,16 +22,10 @@ namespace olepunchy.Blog {
             HttpClient client = new HttpClient(clientHandler);
 
             Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://olepunchy.dev/data/blog-data.json");
-            // Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://localhost:5001/data/blog-data.json");
-            // Posts = await client.GetFromJsonAsync<IEnumerable<PostModel>>("https://github.com/olepunchy/blog/blob/main/blog-data.json");
 
             if (Posts != null) {
                 foreach (var post in Posts) {
                     post.Tags = string.Join<string>(",", post.Keywords);
-                    // GetMarkdownFromFile(post);
-                    // post.Markdown = GetMarkdownFromUrl(client, post.File);
-                    // GetCreatedDate(post);
-                    // post.Created = post.Created;
                 }
             }
 
@@ -47,19 +41,5 @@ namespace olepunchy.Blog {
 
             return p;
         }
-
-        // private void GetMarkdownFromFile(PostModel post) {
-        //     post.Markdown = File.ReadAllText(post.File);
-        // }
-
-        // private string GetMarkdownFromUrl(HttpClient client, string url) {
-        //     var text = client.GetStringAsync(url);
-        //
-        //     return text.Result;
-        // }
-
-        // private void GetCreatedDate(PostModel post) {
-        // post.Created = File.GetCreationTime(post.File);
-        // }
     }
 }
